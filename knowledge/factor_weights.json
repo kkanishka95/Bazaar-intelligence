@@ -1,0 +1,115 @@
+{
+  "version": "V2",
+  "last_updated": "April 2026",
+  "backtest_validation": {
+    "swing_detection": "95.7%",
+    "precision": "91.7%",
+    "false_alarm_rate": "8.3%"
+  },
+  "factors": [
+    {
+      "id": "CALENDAR_EVENT",
+      "name": "Calendar Event",
+      "base_weight": 10,
+      "v2_refinement": "R1_SURPRISE_DELTA",
+      "description": "Scheduled events with 100% swing hit rate: Budget Day, FOMC, RBI MPC, Election Results, US CPI, F&O Expiry",
+      "downgrade_conditions": "VIX below 14 AND consensus probability above 90 percent reduces weight to 2-3"
+    },
+    {
+      "id": "PENDING_RESOLUTION_EVENT",
+      "name": "Pending Resolution Event",
+      "base_weight": 10,
+      "v2_refinement": "R2_NAMED_AUTHORITY_PRE",
+      "description": "Named authority with publicly announced pending decision due within 12-24 hours with binary market outcome",
+      "activation_conditions": "Named authority PLUS specific timeframe PLUS binary outcome PLUS opposite directional impacts"
+    },
+    {
+      "id": "US_MARKETS_GIFT_NIFTY",
+      "name": "US Markets and Gift Nifty",
+      "base_weight": 8,
+      "v2_refinement": "NONE",
+      "description": "S&P 500 close best overnight gap predictor 60 percent of gaps. Gift Nifty at 8:30 AM accurate to 0.3 percent",
+      "key_rule": "S&P falls over 2 percent overnight India gaps down 1 to 1.5 percent at open 90 percent reliability"
+    },
+    {
+      "id": "CRUDE_OIL",
+      "name": "Crude Oil Brent",
+      "base_weight": 7,
+      "v2_refinement": "NONE",
+      "description": "India imports 85 percent of oil. Every 10 dollar move equals 1.2 lakh crore annual import bill change",
+      "elevated_triggers": "Brent above 100 in conflict weight 8. Daily move above 3 percent weight 9. Brent above 110 weight 10"
+    },
+    {
+      "id": "FII_FLOW_TREND",
+      "name": "FII Flow Trend",
+      "base_weight": 7,
+      "v2_refinement": "R4_FII_STREAK_COUNTER",
+      "description": "NSE daily FII DII data. 5-day trend direction and acceleration",
+      "r4_trigger": "7 or more consecutive days net selling above 3000 crore auto-sets weight to 9 and flags BEARISH"
+    },
+    {
+      "id": "RUPEE_DOLLAR",
+      "name": "Rupee Dollar Rate",
+      "base_weight": 6,
+      "v2_refinement": "NONE",
+      "description": "INR/USD current level and intraday direction",
+      "key_rule": "Rupee falls over 0.5 percent in single session Nifty falls same session near-perfect inverse"
+    },
+    {
+      "id": "INDIA_VIX",
+      "name": "India VIX Fear Index",
+      "base_weight": 6,
+      "v2_refinement": "NONE",
+      "description": "Market fear and volatility gauge",
+      "levels": "Below 12 coiled spring. 12-18 normal. 18-25 elevated. Above 25 panic crash already priced bounce imminent. Above 30 extreme floor imminent"
+    },
+    {
+      "id": "ASIAN_MARKETS",
+      "name": "Asian Markets",
+      "base_weight": 5,
+      "v2_refinement": "NONE",
+      "description": "Nikkei Hang Seng Shanghai KOSPI",
+      "key_rules": "Nikkei fall above 2 percent India gap-down signal. Hang Seng fall above 2 percent China FII exit from India. Asian markets broadly up above 1 percent risk-on India follows"
+    },
+    {
+      "id": "EUROPEAN_MARKETS",
+      "name": "European Markets",
+      "base_weight": 4,
+      "v2_refinement": "NONE",
+      "description": "FTSE DAX CAC. Primary use at 2:30 PM IST as real-time proxy for US session direction",
+      "key_rule": "DAX down above 1.5 percent at 2:30 PM IST US likely to open negative India gap-down tomorrow"
+    },
+    {
+      "id": "DII_COUNTERBALANCE",
+      "name": "DII Counterbalance",
+      "base_weight": 4,
+      "v2_refinement": "NONE",
+      "description": "Domestic institutional investors buying on dips. SIP floor",
+      "key_rule": "DII heavy buying above 4000 crore slows crash speed but does not reverse direction. SIP inflows are mechanical floor"
+    },
+    {
+      "id": "DMA_200_PROXIMITY",
+      "name": "200-DMA Proximity",
+      "base_weight": 3,
+      "v2_refinement": "NONE",
+      "description": "Nifty within 2 percent of 200-day moving average is high sensitivity zone",
+      "key_rule": "Breaking below 200-DMA triggers algorithmic selling and FII stops. Bouncing off 200-DMA mechanical support buyers"
+    },
+    {
+      "id": "OPTIONS_EXPIRY_GAMMA",
+      "name": "F&O Options Expiry Gamma",
+      "base_weight": 3,
+      "v2_refinement": "NONE",
+      "description": "Monthly expiry last Thursday. Amplifies existing trend 40-60 percent",
+      "weight_scaling": "Expiry day 9. 1-2 days before 7. 3-7 days before 5. More than 7 days 3"
+    },
+    {
+      "id": "MACRO_REGIME",
+      "name": "Active Macro Regime",
+      "base_weight": 3,
+      "v2_refinement": "NONE",
+      "description": "Background multi-week theme that amplifies or mutes all other signals",
+      "current": "Iran war Hormuz blockade bearish India since February 28 2026"
+    }
+  ]
+}

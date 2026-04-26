@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "date": "2026-04-26",
+    "scan_time_ist": "12:00 IST",
+    "status": "CONFIRMED_PRE",
+    "agent": "pre_monitor",
+    "notes": "Iran ceasefire talk deadline falls tonight. Witkoff + Kushner in Islamabad for direct talks with Iranian FM. Trump 3-5 day window from April 22 expires April 25-27."
+  },
+  "pre_events": [
+    {
+      "pre_id": 1,
+      "confidence": "HIGH",
+      "authority": "US President Donald Trump / Special Envoy Steve Witkoff",
+      "description": "Witkoff and Kushner flew to Islamabad on April 24-25 for direct talks with Iran's Foreign Minister. Trump issued a 3-5 day ultimatum on April 22 for Iran to unify its government and submit a peace proposal. The deadline window expires April 25-27 (today). Outcome — deal framework, extension, or resumption of US strikes — is expected before Indian market open on April 27.",
+      "deadline": "April 26-27, 2026 (before 9:15 AM IST April 27)",
+      "resolves_before_market_open": true,
+      "scenario_a": {
+        "outcome": "Islamabad talks yield a deal framework or concrete ceasefire extension with conditions. Iran submits a unified proposal. Trump announces pause in hostilities and a roadmap toward Hormuz reopening.",
+        "market_impact": "Nifty gap-up +2.5 to +4.0 percent. Crude falls 5-8 USD (from ~105 toward 97-99). Rupee strengthens toward 92-92.5. Relief rally in oil-sensitive sectors (airlines, paint, OMCs). FII short-covering likely.",
+        "historical_analogue": "Iran-US April 8 2026 ceasefire announcement: Nifty opened +2.3 percent on April 9",
+        "probability_pct": 30
+      },
+      "scenario_b": {
+        "outcome": "Islamabad talks collapse. Iran's internal divisions prevent a unified proposal. Trump announces resumption of strikes and/or tightened naval blockade. Hormuz situation deteriorates.",
+        "market_impact": "Nifty gap-down -3.0 to -5.0 percent. Crude surges +6-10 USD (toward 110-115). Rupee weakens to 94.5-95. OMCs, airlines, NBFCs sell off sharply. VIX spike to 22-25.",
+        "historical_analogue": "Islamabad Talks collapse April 12 2026: Nifty fell -2.8 percent intraday",
+        "probability_pct": 30
+      },
+      "base_case": {
+        "outcome": "Talks continue inconclusively. Trump grants another informal extension without announcement. Ceasefire holds in name. No breakthrough, no resumption. Status quo maintained.",
+        "market_impact": "Flat to mild positive +0.3 to +0.7 percent. Markets already pricing in extended ceasefire. Crude stays in 103-107 range.",
+        "probability_pct": 40
+      },
+      "floor_volatility_pct": 2.0,
+      "source_url": "https://www.cnbc.com/2026/04/24/iran-war-pakistan-trump-hegseth.html",
+      "source_headline": "Kushner, Witkoff — not Vance — heading to Pakistan for 'direct talks' with Iran, White House says",
+      "additional_sources": [
+        {
+          "url": "https://www.axios.com/2026/04/22/trump-iran-war-power-struggle-ceasefire",
+          "headline": "Trump gives Iran days to end power struggle, return to peace talks"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/liveblog/2026/4/24/iran-war-live-lebanon-truce-extended-trump-says-time-not-on-tehrans-side",
+          "headline": "Iran war updates: Witkoff, Kushner to fly to Pakistan as Iran team arrives"
+        },
+        {
+          "url": "https://www.npr.org/2026/04/24/g-s1-118595/middle-east-war-updates",
+          "headline": "Kushner and U.S. envoy Witkoff will head to Pakistan for new Iran talks"
+        }
+      ]
+    }
+  ],
+  "background_pre": {
+    "active": true,
+    "description": "Iran war / Hormuz blockade regime active since February 28, 2026. Dual blockade: US naval blockade of Iranian ports (since April 13) + Iranian partial blockade of Strait of Hormuz (20 percent of world oil). Second round of Islamabad Talks called off April 24. Both sides accusing each other of ceasefire violations. US military developing new plans to target Hormuz capabilities. USS George HW Bush carrier arrived in region (now 3 US carrier groups present).",
+    "weekly_scenarios": {
+      "breakthrough_probability_pct": 20,
+      "escalation_probability_pct": 25,
+      "status_quo_probability_pct": 55
+    },
+    "regime_change_signals_absent": [
+      "Hormuz still partially blockaded",
+      "US naval blockade of Iranian ports remains",
+      "Second Islamabad round called off April 24",
+      "Iran internal power struggle unresolved",
+      "Crude still 103-107 USD (pre-war: 70 USD)"
+    ]
+  },
+  "no_pre_declaration": null,
+  "other_checks": {
+    "fed_emergency": "No Fed emergency meeting. Next scheduled FOMC is April 28-29 2026 — no rate decision tonight.",
+    "rbi_emergency": "No RBI emergency announcement found. RBI held rates at 5.25 percent. April 2026 monthly bulletin released April 24 with no emergency signals.",
+    "opec": "No OPEC meeting on April 26. Next ministerial meeting June 7, 2026.",
+    "india_supreme_court": "No market-moving SC verdict found for April 26.",
+    "fomc_upcoming": "FOMC April 28-29 meeting is 2 days away — watch for pre-meeting commentary. Not an overnight PRE for Indian market open April 27."
+  }
+}

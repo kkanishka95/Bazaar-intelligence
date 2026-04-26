@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "date": "2026-04-25",
+    "mode": "am",
+    "collection_time_ist": "08:20 IST",
+    "searches_completed": 15
+  },
+  "india_markets": {
+    "nifty_level": "23897.95",
+    "nifty_change_pct": "-1.14",
+    "nifty_change_pts": "-275.10",
+    "sensex_level": "76664.21",
+    "sensex_change_pct": "-1.29",
+    "sensex_change_pts": "-999.79",
+    "india_vix": "19.71",
+    "nifty_200dma": "23530.43",
+    "nifty_vs_200dma_pct": "+1.56",
+    "market_status": "closed",
+    "fii_net_crore": "+999",
+    "dii_net_crore": null,
+    "fii_consecutive_selling_days": "0",
+    "fii_5day_total_crore": null
+  },
+  "macro": {
+    "brent_crude_usd": "105.33",
+    "brent_change_pct": "+0.30",
+    "usd_inr": "94.26",
+    "inr_change_pct": "+0.48",
+    "gold_usd": "4722.19",
+    "us_10yr_yield": "4.33"
+  },
+  "us_markets": {
+    "sp500_level": "7165.08",
+    "sp500_change_pct": "+0.80",
+    "dow_level": "49230.71",
+    "dow_change_pct": "-0.16",
+    "nasdaq_level": "24836.60",
+    "nasdaq_change_pct": "+1.63",
+    "us_market_status": "closed",
+    "sp500_futures_change_pct": null
+  },
+  "am_mode_only": {
+    "gift_nifty_level": "24134.00",
+    "gift_nifty_change_pts": "+180.00",
+    "gift_nifty_change_pct": "+0.75",
+    "nikkei_change_pct": "+0.97",
+    "hang_seng_change_pct": "-0.16",
+    "kospi_change_pct": "+0.90"
+  },
+  "pm_mode_only": {
+    "ftse_change_pct": null,
+    "dax_change_pct": null,
+    "cac_change_pct": null,
+    "us_futures_sp500_pct": null
+  },
+  "upcoming_calendar_events": [
+    {
+      "event": "FOMC Meeting (Fed Rate Decision)",
+      "date": "2026-04-28 to 2026-04-29",
+      "importance": "HIGH",
+      "consensus_probability": "No change expected; rates on hold",
+      "india_impact": "HIGH - USD/INR and FII flows sensitive to Fed tone on inflation given Iran-driven energy shock"
+    },
+    {
+      "event": "US GDP Q1 2026 Advance Estimate",
+      "date": "2026-04-30",
+      "importance": "HIGH",
+      "consensus_probability": "Slowdown expected due to geopolitical disruption",
+      "india_impact": "MEDIUM - Weak US GDP could weigh on IT sector and export-linked stocks"
+    },
+    {
+      "event": "RBI MPC Meeting (Rate Decision)",
+      "date": "2026-06-03 to 2026-06-05",
+      "importance": "HIGH",
+      "consensus_probability": "Possible rate hold given rising crude inflation",
+      "india_impact": "HIGH - Directly sets repo rate and liquidity stance"
+    },
+    {
+      "event": "US-Iran Peace Talks (Islamabad, if resumed)",
+      "date": "2026-04-26",
+      "importance": "HIGH",
+      "consensus_probability": "Uncertain; Kushner/Witkoff trip cancelled by Trump on April 25",
+      "india_impact": "HIGH - Ceasefire resolution would sharply lower crude, boost INR and FII inflows"
+    },
+    {
+      "event": "India Q4 FY26 GDP Data",
+      "date": "2026-05-30",
+      "importance": "HIGH",
+      "consensus_probability": "Estimate ~6.8% YoY growth",
+      "india_impact": "HIGH - Determines RBI policy trajectory and equity market sentiment"
+    },
+    {
+      "event": "US Non-Farm Payrolls (April 2026)",
+      "date": "2026-05-01",
+      "importance": "HIGH",
+      "consensus_probability": "Moderation expected given energy-shock uncertainty",
+      "india_impact": "MEDIUM - Impacts USD strength and FII positioning"
+    }
+  ],
+  "top_news_headlines": [
+    {
+      "headline": "Brent crude holds above $105/bbl as Iran seizes two ships in Strait of Hormuz despite ceasefire extension",
+      "source": "NBC News / CNBC",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "Trump extends US-Iran ceasefire indefinitely but cancels Kushner/Witkoff Islamabad peace talks trip",
+      "source": "CBS News",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "S&P 500 and Nasdaq close at records on April 24; Intel surges 23% on strong earnings, semiconductors rally 18th straight day",
+      "source": "CNBC / TheStreet",
+      "relevance_to_india": "MEDIUM",
+      "sentiment": "BULLISH"
+    },
+    {
+      "headline": "India's Nifty IT index falls ~10% in one week — steepest decline since March 2020 — as Infosys and HCLTech cut guidance",
+      "source": "Business Standard",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "FIIs return as net buyers on April 24 for first time in 7 weeks; India receives $106 mn inflow after cumulative $5 bn outflow",
+      "source": "BusinessToday",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BULLISH"
+    },
+    {
+      "headline": "JP Morgan downgrades Indian equities to 'Neutral' from 'Overweight' citing high valuations and energy shock earnings headwinds",
+      "source": "Market News",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "Bank of England deputy governor warns global stock markets are overvalued and due for correction amid geopolitical risks",
+      "source": "CNBC",
+      "relevance_to_india": "MEDIUM",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "GIFT Nifty trading at 24,134 (+0.75%) indicating a positive opening for Indian markets next week if geopolitical situation stabilises",
+      "source": "5paisa / KotakNeo",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BULLISH"
+    }
+  ],
+  "iran_hormuz_status": {
+    "ceasefire_active": true,
+    "latest_development": "Trump extended the US-Iran ceasefire indefinitely (as of April 25) but cancelled envoys Kushner and Witkoff's planned Islamabad peace talks trip. Iran's Revolutionary Guard seized two international (non-US, non-Israeli) vessels in the Strait of Hormuz. White House stated this does not violate the ceasefire. Iran's parliamentary speaker called the US naval blockade a ceasefire violation. US blockade of the Strait continues.",
+    "strait_status": "partially open",
+    "crude_impact": "Brent crude at $105.33/bbl, up ~17% week-on-week. Continued Hormuz uncertainty sustaining oil above $100. Weighing heavily on India's current account deficit, rupee (USD/INR ~94.26), and inflation outlook."
+  }
+}

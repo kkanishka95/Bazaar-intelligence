@@ -1,0 +1,123 @@
+name: Bazaar Intelligence Daily Runs
+
+on:
+  schedule:
+    # All times in UTC. IST = UTC + 5:30
+    - cron: '50 6 * * 1-5'   # 12:20 PM IST — PRE Monitor
+    - cron: '50 8 * * 1-5'   # 2:20 PM IST  — Data Collector PM
+    - cron: '00 9 * * 1-5'   # 2:30 PM IST  — Predictor PM
+    - cron: '50 2 * * 2-6'   # 8:20 AM IST  — Data Collector AM (next calendar day)
+    - cron: '00 3 * * 2-6'   # 8:30 AM IST  — Predictor AM (next calendar day)
+    - cron: '00 11 * * 1-5'  # 4:30 PM IST  — Evaluator
+  workflow_dispatch:
+    inputs:
+      agent:
+        description: 'Agent to run manually'
+        required: true
+        type: choice
+        options:
+          - pre_monitor
+          - data_collector_pm
+          - predictor_pm
+          - data_collector_am
+          - predictor_am
+          - evaluator
+          - quarterly_mini
+          - quarterly_full
+      date:
+        description: 'Date override (YYYY-MM-DD, leave empty for today IST)'
+        required: false
+
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+jobs:
+  run_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic/claude-code
+
+      - name: Get current IST date
+        id: ist_time
+        run: |
+          DATE=$(TZ="Asia/Kolkata" date +%Y-%m-%d)
+          HOUR=$(TZ="Asia/Kolkata" date +%H)
+          MIN=$(TZ="Asia/Kolkata" date +%M)
+          echo "date=$DATE" >> $GITHUB_OUTPUT
+          echo "hour=$HOUR" >> $GITHUB_OUTPUT
+          echo "time=${HOUR}:${MIN}" >> $GITHUB_OUTPUT
+
+      - name: Run PRE Monitor (12:00 PM IST)
+        if: github.event.schedule == '50 6 * * 1-5' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'pre_monitor')
+        run: |
+          DATE="${{ github.event.inputs.date || steps.ist_time.outputs.date }}"
+          chmod +x scripts/run_pre_monitor.sh
+          ./scripts/run_pre_monitor.sh $DATE
+
+      - name: Run Data Collector PM (2:20 PM IST)
+        if: github.event.schedule == '50 8 * * 1-5' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'data_collector_pm')
+        run: |
+          DATE="${{ github.event.inputs.date || steps.ist_time.outputs.date }}"
+          chmod +x scripts/run_data_collector.sh
+          ./scripts/run_data_collector.sh pm $DATE
+
+      - name: Run Predictor PM (2:30 PM IST)
+        if: github.event.schedule == '00 9 * * 1-5' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'predictor_pm')
+        run: |
+          DATE="${{ github.event.inputs.date || steps.ist_time.outputs.date }}"
+          chmod +x scripts/run_predictor_pm.sh
+          ./scripts/run_predictor_pm.sh $DATE
+
+      - name: Run Data Collector AM (8:20 AM IST)
+        if: github.event.schedule == '50 2 * * 2-6' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'data_collector_am')
+        run: |
+          DATE="${{ github.event.inputs.date || steps.ist_time.outputs.date }}"
+          chmod +x scripts/run_data_collector.sh
+          ./scripts/run_data_collector.sh am $DATE
+
+      - name: Run Predictor AM (8:30 AM IST)
+        if: github.event.schedule == '00 3 * * 2-6' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'predictor_am')
+        run: |
+          DATE="${{ github.event.inputs.date || steps.ist_time.outputs.date }}"
+          chmod +x scripts/run_predictor_am.sh
+          ./scripts/run_predictor_am.sh $DATE
+
+      - name: Run Evaluator (4:30 PM IST)
+        if: github.event.schedule == '00 11 * * 1-5' || (github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'evaluator')
+        run: |
+          DATE="${{ github.event.inputs.date || steps.ist_time.outputs.date }}"
+          chmod +x scripts/run_evaluator.sh
+          ./scripts/run_evaluator.sh $DATE
+
+      - name: Run Quarterly Mini (manual only)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'quarterly_mini'
+        run: |
+          YEARMONTH="${{ github.event.inputs.date || steps.ist_time.outputs.date }}"
+          YEARMONTH=$(echo $YEARMONTH | cut -c1-7)
+          chmod +x scripts/run_quarterly_mini.sh
+          ./scripts/run_quarterly_mini.sh $YEARMONTH
+
+      - name: Run Quarterly Full (manual only)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.agent == 'quarterly_full'
+        run: |
+          chmod +x scripts/run_quarterly_full.sh
+          ./scripts/run_quarterly_full.sh
+
+      - name: Commit outputs to repo
+        run: |
+          git config user.name "Bazaar Intelligence Bot"
+          git config user.email "bazaar-intel@noreply.github.com"
+          git add data/ predictions/ feedback/ output/ quarterly/
+          git diff --staged --quiet || git commit -m "Auto: $(TZ='Asia/Kolkata' date '+%Y-%m-%d %H:%M IST') agent run"
+          git pull --rebase origin main
+          git push

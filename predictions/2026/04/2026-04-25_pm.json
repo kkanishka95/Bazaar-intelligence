@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "date": "2026-04-25",
+    "prediction_for": "2026-04-26",
+    "prediction_for_day": "Sunday (next market open: Monday April 27)",
+    "generated_at_ist": "14:30",
+    "agent": "PREDICTOR_PM",
+    "data_file_read": "data/2026/04/2026-04-25_pm_data.json",
+    "pre_file_read": "data/2026/04/2026-04-25_pre.json"
+  },
+  "prediction": {
+    "call": "HIGH_VOLATILITY_UNCERTAIN",
+    "direction": "uncertain",
+    "sensex_range_pts": "-3000 to +1800",
+    "nifty_range_pts": "-900 to +550",
+    "pct_range": "-4.0% to +2.5%",
+    "confidence": "LOW",
+    "predictability_tier": "P2",
+    "tier_reason": "Date known (Monday April 27 open), swing near-certain (floor volatility 1.5%), direction genuinely binary — depends entirely on Trump Truth Social posts over the weekend and Iran peace talks trajectory."
+  },
+  "dominant_factor": {
+    "id": "PENDING_RESOLUTION_EVENT",
+    "name": "Pending Resolution Event — Trump / Iran Peace Talks Collapse",
+    "adjusted_weight": 10,
+    "signal": "VOLATILE",
+    "reason": "US-Pakistan hosted Iran peace talks collapsed on April 25 after Trump canceled the Witkoff/Kushner Islamabad trip. Trump has a documented pattern of impulsive overnight Truth Social posts on Iran that move markets. With the Strait of Hormuz partially blockaded, crude above $104, and the next trading day on Monday April 27, the entire weekend is a live PRE window. Three distinct scenarios — diplomatic breakthrough (20%), escalation threat (35%), or no announcement/base case (45%) — make directional prediction meaningless. PRE overrides all other factors."
+  },
+  "pre_status": {
+    "active": true,
+    "confidence": "PROBABLE_PRE",
+    "description": "Trump canceled Witkoff/Kushner Pakistan trip on April 25. Iran talks stalled. Trump may post escalation or diplomatic signal over the weekend before Monday's Indian market open. Hormuz remains partially blockaded; crude above $104. Overnight Truth Social announcement risk is elevated.",
+    "scenario_a": {
+      "probability_pct": 20,
+      "outcome": "Trump posts surprise diplomatic signal — Iran submits unified proposal or trip is rescheduled with breakthrough framing. Ceasefire solidifies. Crude falls below $90.",
+      "market_impact": "Gap-up +1.5% to +2.5% on Nifty; oil & gas, aviation, paint sectors lead rally",
+      "historical_analogue": "Analogue M — CEASEFIRE RELIEF April 9 2026 — Nifty gapped +4% at open"
+    },
+    "scenario_b": {
+      "probability_pct": 35,
+      "outcome": "Trump posts escalation warning on Truth Social — threatens tariffs on China/India for Iran trade, signals military action, or declares ceasefire over. Crude spikes above $115.",
+      "market_impact": "Gap-down -2% to -4% on Nifty; OMCs, aviation, FMCG, metals hit hardest; INR weakens sharply",
+      "historical_analogue": "Analogue G — UKRAINE INVASION Feb 24 2022 — Sensex fell -3.06% on crude spike day"
+    },
+    "base_case": {
+      "probability_pct": 45,
+      "outcome": "No significant Trump announcement on Iran over the weekend. Markets digest Friday's talks cancellation (already partly priced — Sensex fell 965 pts April 24). Nifty opens flat to mildly negative Monday.",
+      "market_impact": "Flat to -0.5%; continuation of existing bearish trend without a fresh catalyst. DII SIP flows provide partial floor.",
+      "historical_analogue": "Analogue L — IRAN WAR SUSTAINED March 2026 — Sensex -2.9% sustained drift without single-day catalysts"
+    },
+    "floor_volatility_pct": 1.5
+  },
+  "factor_ranking": [
+    {
+      "rank": 1,
+      "id": "PENDING_RESOLUTION_EVENT",
+      "name": "Pending Resolution Event — Trump / Iran Truth Social Risk",
+      "adjusted_weight": 10,
+      "base_weight": 10,
+      "weight_change_reason": "All 3 PRE conditions met: named authority (Trump) + specific timeframe (before Monday 9:15 AM IST open) + binary opposite-direction market outcomes",
+      "signal": "VOLATILE",
+      "value": "Talks canceled April 25. No new date set. Trump authorized Navy to destroy mine-laying vessels. Iran seized 2 ships April 22. Ceasefire extended but fragile.",
+      "impact": "Dominant factor. Call overridden to HIGH_VOLATILITY_UNCERTAIN. Weekend announcement risk is the only number that matters for Monday's open direction."
+    },
+    {
+      "rank": 2,
+      "id": "FII_FLOW_TREND",
+      "name": "FII Flow Trend — R4 Streak Counter",
+      "adjusted_weight": 9,
+      "base_weight": 7,
+      "weight_change_reason": "R4 auto-triggered: 18 consecutive selling days, well above the 7-day threshold. Auto-weight 9, auto-BEARISH.",
+      "signal": "BEARISH",
+      "value": "FII net: -₹20,410 crore. 18 consecutive selling days. April 2026 MTD: -₹39,220 crore pulled. 5-day total: -₹12,500 crore.",
+      "impact": "R4 auto-BEARISH. Institutional structural selling — not panic, not rotation. JP Morgan downgrade to Neutral adds institutional selling mandate. Mechanical headwind on every green candle."
+    },
+    {
+      "rank": 3,
+      "id": "CRUDE_OIL",
+      "name": "Crude Oil Brent — Iran War Boost",
+      "adjusted_weight": 9,
+      "base_weight": 7,
+      "weight_change_reason": "Iran war active: +2 to base weight. Brent $104.43 (above $100 in conflict = weight 8, war boost pushes to 9).",
+      "signal": "BEARISH",
+      "value": "Brent: $104.43/bbl (-0.61% Friday). Strait of Hormuz partially blocked. Iran seized 2 ships April 22. Talks collapsed April 25. No supply relief on horizon.",
+      "impact": "India's oil import bill elevated by ~₹1.2 lakh crore/year per $10 increment above pre-war $70 baseline. CAD pressure, INR weakness, margin compression for OMCs and industrials. No catalyst for crude relief with talks collapsed."
+    },
+    {
+      "rank": 4,
+      "id": "US_MARKETS_GIFT_NIFTY",
+      "name": "US Markets Close — Friday",
+      "adjusted_weight": 8,
+      "base_weight": 8,
+      "weight_change_reason": "No change. PM mode, Friday close is the signal.",
+      "signal": "BULLISH",
+      "value": "S&P 500: +0.78% to 7165.80. Nasdaq: +1.63% to 24837. Dow: -0.11%. Intel +23% after earnings. Record highs on S&P 500 and Nasdaq.",
+      "impact": "Partial bullish offset in base-case scenario. US tech strength provides some FII reallocation incentive, but not enough to reverse Iran-war-era India-specific discount. In Scenario B (escalation), US markets would also gap down, eliminating this offset."
+    },
+    {
+      "rank": 5,
+      "id": "MACRO_REGIME",
+      "name": "Active Macro Regime — Iran War / Hormuz Blockade",
+      "adjusted_weight": 7,
+      "base_weight": 3,
+      "weight_change_reason": "Iran war active: effective weight 7 (base 3 → 7 per regime multiplier).",
+      "signal": "BEARISH",
+      "value": "Iran war active since Feb 28 2026. FII net sold ₹1.04 lakh crore YTD. Goldman cut India 2026 GDP to 5.9%. RBI paused cuts at 5.25% due to oil inflation. Hormuz partial blockade ongoing.",
+      "impact": "Bearish multiplier on all India trades until regime ends. Regime end signals (Hormuz fully reopens, crude <$85 sustained) are not on the horizon. Each bearish factor gets amplified; bullish bounces are shallow and short-lived."
+    },
+    {
+      "rank": 6,
+      "id": "INDIA_VIX",
+      "name": "India VIX — Fear Index",
+      "adjusted_weight": 6,
+      "base_weight": 6,
+      "weight_change_reason": "No change. VIX elevated, consistent with Iran war regime range.",
+      "signal": "BEARISH",
+      "value": "India VIX: 18.36 (elevated zone, 18-25). In Iran war regime range of 18-22.",
+      "impact": "Elevated VIX confirms market pricing ongoing uncertainty premium. Not yet in panic zone (>25) so no contrarian bounce signal. VIX at 18+ means options premiums are expensive and hedging cost is real — weighs on sentiment."
+    },
+    {
+      "rank": 7,
+      "id": "RUPEE_DOLLAR",
+      "name": "Rupee-Dollar Rate — Iran War Amplified",
+      "adjusted_weight": 6,
+      "base_weight": 6,
+      "weight_change_reason": "Iran war active: bearish rupee signals amplified per regime multiplier.",
+      "signal": "BEARISH",
+      "value": "USD/INR: 94.2625 (+0.48% INR weakening Friday). Pre-war level: 83-86. Current: 93-94 range.",
+      "impact": "INR at historic weak levels against USD driven by oil import bill and FII outflows. INR weakness amplified by Iran war multiplier. FII USD-denominated returns further eroded by weak INR — feedback loop adding to structural selling pressure."
+    },
+    {
+      "rank": 8,
+      "id": "CALENDAR_EVENT",
+      "name": "Calendar Event — FOMC April 28-29",
+      "adjusted_weight": 5,
+      "base_weight": 10,
+      "weight_change_reason": "R1 partial trigger: VIX is NOT below 14 (it is 18.36), but consensus on hold is above 90%. Only one of two R1 conditions met → weight reduced to 5-6. Using 5.",
+      "signal": "VOLATILE",
+      "value": "FOMC meeting April 28-29. Consensus: hold at current rate. ~15% chance of 25bps cut. India impact HIGH — hawkish hold could extend FII selling.",
+      "impact": "FOMC uncertainty adds a secondary tail risk beyond Iran PRE. A hawkish hold statement (focusing on oil-driven inflation) could extend FII selling from India. A cut signal (unlikely) would be strongly bullish. Weight capped at 5 due to high hold consensus."
+    },
+    {
+      "rank": 9,
+      "id": "EUROPEAN_MARKETS",
+      "name": "European Markets — Friday Close",
+      "adjusted_weight": 4,
+      "base_weight": 4,
+      "weight_change_reason": "No change.",
+      "signal": "BEARISH",
+      "value": "FTSE: -1.25%. CAC: -0.84%. DAX: -0.11%. Bank of England warned of overvalued global equities.",
+      "impact": "European markets closed broadly negative Friday. FTSE -1.25% (below -1% threshold) signals risk-off sentiment in EU session. DAX relatively resilient at -0.11%. Bank of England warning of sharp correction adds to institutional caution."
+    },
+    {
+      "rank": 10,
+      "id": "DII_COUNTERBALANCE",
+      "name": "DII Counterbalance — SIP Floor",
+      "adjusted_weight": 4,
+      "base_weight": 4,
+      "weight_change_reason": "No change.",
+      "signal": "NEUTRAL",
+      "value": "DII net bought: +₹13,490.80 crore Friday. Strong buying.",
+      "impact": "DII buying provides a meaningful mechanical floor — slowing crash speed but not reversing direction. SEBI NSE co-location settlement news is also mildly positive for domestic sentiment. DII buying does NOT create a rally in Iran war regime; it cushions falls."
+    },
+    {
+      "rank": 11,
+      "id": "DMA_200_PROXIMITY",
+      "name": "200-DMA Proximity",
+      "adjusted_weight": 3,
+      "base_weight": 3,
+      "weight_change_reason": "No change.",
+      "signal": "NEUTRAL",
+      "value": "Nifty: 23897.95. 200-DMA: 23505.47. Distance: +1.67% above 200-DMA.",
+      "impact": "Nifty is in the 2% sensitivity zone above 200-DMA. A Scenario B escalation gap-down (-2% to -4%) would push Nifty through 200-DMA, triggering algorithmic selling stops — amplifying any bearish move. Support at 23,500 is a critical technical level to watch on Monday."
+    },
+    {
+      "rank": 12,
+      "id": "OPTIONS_EXPIRY_GAMMA",
+      "name": "F&O Options Expiry Gamma",
+      "adjusted_weight": 3,
+      "base_weight": 3,
+      "weight_change_reason": "April monthly expiry was April 23. Next monthly expiry is May last Thursday. Currently >7 days away — weight stays at base 3.",
+      "signal": "NEUTRAL",
+      "value": "Monthly expiry: April 23 (past). Next: May last Thursday. Weekly expiry: Thursday May 2. >7 days from prediction date.",
+      "impact": "No expiry gamma amplification for Monday's open. Neutral on direction. Post-expiry positioning resets remove some of the late-April positioning overhang."
+    },
+    {
+      "rank": 13,
+      "id": "ASIAN_MARKETS",
+      "name": "Asian Markets",
+      "adjusted_weight": 0,
+      "base_weight": 5,
+      "weight_change_reason": "Weekend — all Asian markets closed Saturday April 26. No live data available. Weight set to 0 for this session.",
+      "signal": "NEUTRAL",
+      "value": "Not available — weekend. Will be critical at Monday AM open (Nikkei, Hang Seng opens before Indian market).",
+      "impact": "Asian market opens on Monday will be the first real-time signal. If Iran escalation occurs over weekend, Nikkei/Hang Seng will gap down before India open. Check GIFT Nifty at 8:30 AM Monday — definitive gap signal."
+    }
+  ],
+  "v2_refinements_applied": {
+    "R1_applied": true,
+    "R1_details": "FOMC meeting April 28-29 upcoming. VIX = 18.36 (NOT below 14 — one condition fails). Consensus on hold is above 90% (one condition met). Since only one of two R1 conditions is met, CALENDAR_EVENT weight reduced from base 10 to 5. Applied to FOMC calendar event.",
+    "R2_applied": true,
+    "R2_details": "PROBABLE_PRE confirmed. All 3 PRE conditions met: named authority (Trump), specific timeframe (before Monday 9:15 AM IST), binary opposite-direction market outcomes (+2.5% vs -4%). PRE becomes dominant factor at weight 10. Call set to HIGH_VOLATILITY_UNCERTAIN.",
+    "R3_applied": false,
+    "R3_details": "RBI MPC is June 3-5, more than 5 weeks away. Not applicable for this prediction session.",
+    "R4_applied": true,
+    "R4_details": "FII consecutive selling days: 18 (well above 7-day threshold). April 2026 MTD FII outflow ₹39,220 crore. Auto-weight 9, auto-BEARISH triggered for FII_FLOW_TREND. Sustained institutional structural selling."
+  },
+  "historical_analogues": [
+    {
+      "analogue_id": "L",
+      "name": "IRAN WAR SUSTAINED",
+      "date": "March 2026",
+      "similarity": "Active Iran war regime with Hormuz partially blockaded. Crude elevated above $100. FII in sustained selling streak. India VIX in 18-22 range. No single-day catalyst — sustained drift.",
+      "key_difference": "Peace talks collapse in late April is a fresh negative catalyst not present in March sustained drift. JP Morgan downgrade adds institutional selling mandate. IT sector weakness (Infosys -7%, HCLTech -5.8%) adds domestic earnings headwind.",
+      "historical_sensex_move": "-2.9%",
+      "relevance_score": 9
+    },
+    {
+      "analogue_id": "M",
+      "name": "CEASEFIRE RELIEF",
+      "date": "April 9 2026",
+      "similarity": "Relevant as Scenario A template — if Trump posts a diplomatic signal over the weekend, the setup mirrors the April 9 ceasefire announcement (+4% Sensex).",
+      "key_difference": "April 9 was an actual announced ceasefire. Current scenario has talks collapsed, making a breakthrough less likely (20% probability). Market is already partially disillusioned with the ceasefire narrative.",
+      "historical_sensex_move": "+4.0%",
+      "relevance_score": 7
+    },
+    {
+      "analogue_id": "G",
+      "name": "UKRAINE INVASION",
+      "date": "February 24 2022",
+      "similarity": "Military conflict + crude oil spike + EM selloff. Scenario B (escalation) would mirror the Ukraine invasion template with Sensex -3.06%.",
+      "key_difference": "Ukraine invasion was a clear single-trigger event. Iran war is ongoing — markets have partially priced the base level of conflict. Escalation from here would require a major fresh signal (ceasefire officially ended, military strike).",
+      "historical_sensex_move": "-3.06%",
+      "relevance_score": 6
+    }
+  ],
+  "macro_regime_active": {
+    "regime_name": "Iran War / Hormuz Blockade",
+    "bearish_multiplier_applied": true,
+    "crude_weight_boost": 2,
+    "macro_regime_effective_weight": 7,
+    "notes": "Regime active since Feb 28 2026. Talks collapsed April 25. No end signals visible. Crude $104+ sustained. INR at 94+."
+  },
+  "watch_variables": [
+    {
+      "variable": "Trump Truth Social posts — Iran / Hormuz / Peace Talks",
+      "check_time": "Saturday and Sunday all day, especially US evening (India early morning)",
+      "bullish_signal": "Diplomatic signal, rescheduled talks, ceasefire terms announced → Gap-up +1.5% to +2.5%",
+      "bearish_signal": "Escalation threat, tariffs on Iran trade partners, military action signal → Gap-down -2% to -4%",
+      "priority": "HIGHEST"
+    },
+    {
+      "variable": "Brent Crude Weekend Futures / ICE price action",
+      "check_time": "Sunday evening before Monday Asia open",
+      "bullish_signal": "Crude falls below $95 on any diplomatic development",
+      "bearish_signal": "Crude spikes above $110 on Hormuz escalation or ship seizures",
+      "priority": "HIGH"
+    },
+    {
+      "variable": "GIFT Nifty Monday morning 8:30 AM IST",
+      "check_time": "Monday 8:30 AM IST",
+      "bullish_signal": "GIFT Nifty above 24200 (+1.3%) — Scenario A playing out",
+      "bearish_signal": "GIFT Nifty below 23500 (-1.7%) — Scenario B playing out; 200-DMA break risk",
+      "priority": "HIGH"
+    },
+    {
+      "variable": "Iran Foreign Minister Pakistan visit (second round of talks)",
+      "check_time": "Saturday-Sunday news feeds",
+      "bullish_signal": "Iran FM arrives in Islamabad, confirms new round of talks — partial de-escalation",
+      "bearish_signal": "Iran formally rejects all US-mediated talks — structural escalation",
+      "priority": "MEDIUM"
+    }
+  ],
+  "internal_reasoning": "PRE status is PROBABLE_PRE driven by Trump's impulsive communication pattern after the April 25 Iran peace talks collapse. This is the dominant factor at weight 10, overriding the otherwise heavily bearish factor stack. The base directional call in the absence of PRE would be GAP_DOWN_MODERATE — FII streak counter has auto-triggered R4 (18 consecutive days, weight 9 BEARISH), crude oil carries an Iran war weight of 9, and the macro regime multiplier sets MACRO_REGIME to effective weight 7. The one bullish offset is US markets (S&P +0.78%, Nasdaq +1.63% at record highs), which provides partial support only in the base case scenario. The 200-DMA proximity at 1.67% is a critical technical vulnerability — a Scenario B gap-down of -2% to -4% would breach the 200-DMA at 23,505 and trigger algorithmic selling, amplifying the fall. Confidence is LOW because the prediction window is fully controlled by Trump's weekend communication behavior, which has no reliable historical pattern beyond the 48-hour response window he typically operates in."
+}

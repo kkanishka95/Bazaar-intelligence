@@ -1,0 +1,141 @@
+BAZAAR INTELLIGENCE — DAILY EVALUATION
+Date: 2026-04-25 (Saturday)
+Generated: 4:30 PM IST
+Agent: EVALUATOR v2
+
+⚠️  SPECIAL WEEKEND EVALUATION — SEE NOTES BELOW
+
+═══════════════════════════════════════
+YESTERDAY'S PM PREDICTION SCORECARD
+═══════════════════════════════════════
+Prediction file: 2026-04-24_pm.json — FILE NOT FOUND
+SCORE: NOT SCORED — N/A
+
+What happened: No PM prediction was generated on Friday April 24, 2026.
+               File 2026-04-24_pm.json does not exist in predictions/2026/04/.
+Root cause:    Unknown — either scheduler skipped Friday PM by design (since
+               April 25 is a non-trading Saturday), or PM agent execution
+               failed on April 24 without recovery.
+Action needed: Clarify scheduler rule — should PM agent run on Fridays to
+               predict Monday open? Currently the Saturday AM agent (2026-04-25_am.json)
+               covers this by predicting Monday April 28 instead.
+
+═══════════════════════════════════════
+TODAY'S AM PREDICTION SCORECARD
+═══════════════════════════════════════
+Prediction for: Monday April 28, 2026
+Generated:      Saturday April 25 8:30 AM IST
+
+Gift Nifty implied: 24,134 (+0.99% / +236 pts vs Friday close 23,897.95)
+Predicted call:     GAP_UP_MODERATE
+Predicted intraday: PARTIAL_REVERSAL (BULLISH_WITH_FADE_RISK)
+Suggested approach: WAIT_15_MIN
+Key support:        24,000 / 23,898 / 23,530
+Key resistance:     24,134 / 24,300 / 24,500
+Max pain gravity:   24,000 (weekly expiry May 2)
+
+SCORE: PENDING — April 28 actual market data needed
+       Score this prediction on Monday April 28 at 4:30 PM IST.
+
+─── PRE-OUTCOME QUALITY ASSESSMENT (non-scored) ────────────────────────────
+Internal consistency: HIGH
+
+STRENGTHS:
+  1. Intel +23% earnings correctly identified as gap-up driver — NOT confused
+     with geopolitical relief. Pattern 2 (ceasefire rally sustain) correctly
+     rejected. This is the critical discrimination that separates the +0.99%
+     gap-up from a potentially larger sustained rally.
+  2. FII R4 auto-trigger dynamically reset: FII returned to net buying
+     (+₹999 crore April 24), ending 18-day selling streak. Model correctly
+     flipped signal from BEARISH to MILDLY_BULLISH and deactivated the R4
+     auto-trigger. Clean real-time update.
+  3. FOMC Day 1 (April 28) as afternoon fade trigger is precisely timed.
+     Institutions reduce risk into Fed decisions — aligns with PARTIAL_REVERSAL
+     expected between 11 AM–1 PM IST.
+  4. WAIT_15_MIN approach is tight: confirm Nifty holds 24,000 by 9:30 AM
+     before entry. Internally consistent with max pain gravity pulling toward
+     24,000 by May 2 expiry.
+
+RISKS TO PREDICTION:
+  1. If FII continues net buying Monday (second consecutive day), the
+     PARTIAL_REVERSAL may not materialize — sustained FII buying would
+     push toward SUSTAIN above 24,200+.
+  2. Crude holds at $105.33 — stable not spiking. If Monday crude spikes
+     above $108 on new Hormuz news, downside extends through 24,000.
+  3. India VIX: AM prediction reads 19.71 but Friday close (pm_data.json)
+     shows 18.36. Source of 19.71 needs verification.
+
+═══════════════════════════════════════
+FACTOR PERFORMANCE TODAY
+═══════════════════════════════════════
+Note: Full factor outcome classification requires Monday April 28 close.
+      Flagged items are pre-outcome calibration concerns only.
+
+CRUDE_OIL (weight 9, BEARISH) — CALIBRATION FLAG
+  Brent at $105.33 is stable (not rising — actually -0.61% Friday).
+  Weight 9 is appropriate when crude is actively rising in conflict regime,
+  but may overweight when crude is holding steady. Watch: if stable Monday,
+  optimal weight is likely 7-8, not 9.
+  Learning signal candidate: Distinguish "crude elevated and rising" (weight 9)
+  from "crude elevated and stable" (weight 7) during Iran war regime.
+
+INDIA_VIX (weight 7, NEUTRAL_BEARISH) — DATA FLAG
+  AM prediction uses VIX 19.71 but pm_data.json shows Friday close 18.36.
+  The 19.71 appears to be a Saturday morning estimate (possibly Gift Nifty
+  implied volatility). Source should be documented. Scoring unaffected but
+  data provenance needs clarity.
+
+All other 11 factors: No pre-outcome calibration concerns flagged.
+  US_MARKETS_GIFT_NIFTY (10) — appropriate AM override weight
+  PENDING_RESOLUTION_EVENT (8) — correctly reduced from 10 as overnight passed
+  FII_FLOW_TREND (7) — R4 reset well-executed; MILDLY_BULLISH appropriate
+  ASIAN_MARKETS (7) — Nikkei/KOSPI ~+1%, correct MILDLY_BULLISH read
+  CALENDAR_EVENT (5) — R1 partial applied correctly for FOMC context
+  RUPEE_DOLLAR (6) — War-amplified at 94.26, appropriate
+  MACRO_REGIME (7) — War multiplier mechanically correct
+  OPTIONS_EXPIRY_GAMMA (5) — 3-7 days to May 2 expiry, correctly weighted
+  DII_COUNTERBALANCE (4) — SIP floor at 23,800-23,900 well-supported
+  DMA_200_PROXIMITY (3) — Background structural, appropriate weight
+  EUROPEAN_MARKETS (0) — CORRECTLY_INACTIVE (not open at 8:30 AM IST)
+
+═══════════════════════════════════════
+NEW PARAMETERS DETECTED
+═══════════════════════════════════════
+US_SEMICONDUCTOR_EARNINGS_CATALYST — Detected for first time this quarter.
+  Description: Major US semiconductor/tech earnings beat drives Indian IT
+  gap-open independent of broad macro signals. Intel +23% → Nasdaq +1.63%
+  → Gift Nifty +0.99% on Saturday AM. Transmission: direct via Gift Nifty.
+  Suggested base weight: 6. Applies when: major chip/tech co (Intel, Nvidia,
+  AMD, TSMC, Microsoft, Google) reports after US close and result is known
+  by India's AM 8:30 AM window. Distinction from US_MARKETS_GIFT_NIFTY:
+  narrow tech rally has different sustainment profile than broad S&P rally.
+  Times flagged this quarter: 1 (first occurrence 2026-04-25).
+
+═══════════════════════════════════════
+CUMULATIVE SCORES THIS QUARTER
+═══════════════════════════════════════
+Sessions evaluated:        1 (2026-04-25)
+Sessions with full scoring: 0 (no actual market outcomes available yet)
+Sessions pending/missing:   1
+
+Average PM score:           N/A (PM file missing, no scoring possible)
+Average AM score:           PENDING (April 28 outcome needed)
+
+Factors flagged for calibration review:
+  - CRUDE_OIL: may overweight when stable-but-elevated vs actively rising
+  - INDIA_VIX: data source clarity needed for Saturday readings
+
+Factors most often overweighted:    Insufficient data (0 scored sessions)
+Factors most often underweighted:   Insufficient data (0 scored sessions)
+
+New parameters flagged total: 1
+  → US_SEMICONDUCTOR_EARNINGS_CATALYST (first flagged 2026-04-25)
+
+═══════════════════════════════════════
+NEXT EVALUATION
+═══════════════════════════════════════
+Monday April 28 at 4:30 PM IST:
+  - Score 2026-04-25_am.json (AM prediction for April 28 open & intraday)
+  - Score 2026-04-28_pm.json (PM prediction for April 29 open) if generated
+  - Actual data needed: Nifty open, high, low, close on April 28; FII flows;
+    crude EOD; FOMC Day 1 sentiment from market reaction

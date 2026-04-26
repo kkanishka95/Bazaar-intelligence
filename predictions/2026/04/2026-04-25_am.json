@@ -1,0 +1,226 @@
+{
+  "metadata": {
+    "date": "2026-04-25",
+    "prediction_for": "2026-04-28",
+    "prediction_for_day": "Monday",
+    "generated_at_ist": "08:30",
+    "agent": "PREDICTOR_AM",
+    "pm_prediction_read": "predictions/2026/04/2026-04-25_pm.json",
+    "pm_prediction_alignment": "PARTIALLY_DIVERGED",
+    "divergence_reason": "PM predicted HIGH_VOLATILITY_UNCERTAIN with base case flat-to-negative (-0.5%). Instead: (1) No Trump escalation overnight → base PRE case played out. (2) Nasdaq +1.63% record close on Intel earnings drove Gift Nifty to 24,134 (+0.99%), higher than flat base case. (3) FII returned to net buying +₹999cr on April 24 — breaking 18-day selling streak and resetting PM's R4 auto-triggered BEARISH. The directional call shifts from UNCERTAIN to GAP_UP_MODERATE, though Iran PRE remains technically active."
+  },
+  "gap_open": {
+    "gift_nifty_level": 24134,
+    "previous_nifty_close": 23897.95,
+    "implied_gap_pct": "+0.99%",
+    "implied_gap_pts": "+236",
+    "confidence": "HIGH",
+    "call": "GAP_UP_MODERATE"
+  },
+  "intraday": {
+    "bias": "BULLISH_WITH_FADE_RISK",
+    "pattern": "US_TECH_DRIVEN_GAP_UP_IN_MACRO_BEARISH_REGIME",
+    "pattern_description": "Gap-up driven by Nasdaq record high (+1.63%) on Intel earnings — not geopolitical relief. Pattern 2 (geopolitical relief sustain) does NOT apply as Iran PRE is still active and crude remains at $105. In macro-bearish regimes, US-tech-driven gap-ups typically face profit booking within 60-90 minutes. FOMC Day 1 starting today adds afternoon caution. Historically fades 60-70% by 1 PM in similar setups. FII reversal (first buying in 7 weeks) prevents full fade — floor near previous close 23,898.",
+    "sustain_or_reverse": "PARTIAL_REVERSAL",
+    "reversal_risk": "MEDIUM",
+    "reversal_trigger": "FOMC Day 1 caution setting in after 11 AM IST; IT sector weakness continuing (Infosys/HCLTech guidance cuts, Nifty IT -10% in one week); Brent crude holding above $105 with no Hormuz resolution; rupee at 94.26 compressing FII USD returns",
+    "first_15_min_watch": "Watch if Nifty holds above 24,000 by 9:30 AM IST. Hold above 24,000 = light long viable with stop at 23,900. Fade below 24,000 within first 15 min = avoid long, pattern is gap-fade day. Watch IT sector (Infosys, TCS, HCLTech) — sustained weakness signals overall market cap.",
+    "key_support": ["24000", "23898", "23530"],
+    "key_resistance": ["24134", "24300", "24500"],
+    "max_pain_strike": "24000",
+    "suggested_approach": "WAIT_15_MIN"
+  },
+  "overnight_developments": {
+    "us_close_summary": "S&P 500 +0.80% to record 7,165 | Nasdaq +1.63% to record 24,837 | Dow -0.16% | Intel +23% on earnings | Semiconductors 18th straight rally day",
+    "overnight_news": "No major Trump Truth Social announcement on Iran overnight. Ceasefire remains extended (no expiry deadline). Iran Strait of Hormuz remains partially blockaded. Brent crude +0.30% to $105.33 — stable, not spiking. FII returned to net buying on April 24 (+₹999 crore), first net buying day in 7 weeks. DOJ closed investigation into Fed Chair Powell, opening path for Kevin Warsh nomination — adds Fed uncertainty.",
+    "pre_resolution": "PRE NOT resolved overnight. Base case (45% probability) played out — no significant Trump announcement. Iran talks remain collapsed with no new date set. Background PRE Iran/Hormuz still fully active. Weekly escalation risk elevated but no overnight trigger occurred.",
+    "vs_pm_prediction": "PM predicted flat-to-negative in base case. Actual overnight outcome: US tech rally (Nasdaq record) lifted Gift Nifty +0.99% above base case. FII reversal breaks PM's R4 auto-trigger. Largest positive surprise vs PM: FII turning to buyers first time in 7 weeks."
+  },
+  "dominant_factor": {
+    "id": "US_MARKETS_GIFT_NIFTY",
+    "adjusted_weight": 10,
+    "signal": "BULLISH",
+    "reason": "Gift Nifty at 24,134 vs previous close 23,897.95 implies +0.99% (GAP_UP_MODERATE). Nasdaq +1.63% to all-time record on Intel +23% earnings beat drives IT sector sentiment. AM mode override elevates this factor to weight 10 as definitive gap anchor. Gift Nifty accuracy ±0.3% — gap-up is confirmed."
+  },
+  "factor_ranking": [
+    {
+      "rank": 1,
+      "id": "US_MARKETS_GIFT_NIFTY",
+      "name": "Gift Nifty / US Markets Close",
+      "adjusted_weight": 10,
+      "base_weight": 8,
+      "weight_change_reason": "AM mode override: Gift Nifty at 8:30 AM is definitive gap signal. Weight 10 replaces US futures.",
+      "signal": "BULLISH",
+      "value": "Gift Nifty: 24,134 (+180 pts, +0.75% from its own previous). Implied gap vs Nifty close: +236 pts (+0.99%). Nasdaq: +1.63% to record 24,837. S&P 500: +0.80% to record 7,165.",
+      "impact": "Dominant gap-open signal. Intel +23% on earnings driving semiconductor and IT sector relief at open. However, this is US-sector-specific strength, not broad macro risk-on — limits sustained Indian market rally."
+    },
+    {
+      "rank": 2,
+      "id": "PENDING_RESOLUTION_EVENT",
+      "name": "Pending Resolution Event — Trump / Iran PRE (base case resolved, still active)",
+      "adjusted_weight": 8,
+      "base_weight": 10,
+      "weight_change_reason": "PRE base case played out overnight (no announcement). Weight reduced from 10 to 8 as immediate overnight trigger window has passed, but PRE remains active for intraday risk — Trump can still post on Truth Social during Indian trading hours.",
+      "signal": "VOLATILE",
+      "value": "No Trump announcement overnight. Ceasefire extended indefinitely, no new peace talk dates set. Hormuz partially blockaded. Iran FM trip to Pakistan uncertain. 35% escalation scenario still live during trading hours.",
+      "impact": "Reduces HIGH_VOLATILITY_UNCERTAIN dominance but does not eliminate it. Any Trump Truth Social post during 9:15 AM - 3:30 PM IST could override the gap-up direction. Intraday tail risk of ±2% on surprise announcement."
+    },
+    {
+      "rank": 3,
+      "id": "CRUDE_OIL",
+      "name": "Crude Oil Brent — Iran War Active",
+      "adjusted_weight": 9,
+      "base_weight": 7,
+      "weight_change_reason": "Iran war active: +2 to base weight. Brent $105.33 (above $100 in conflict = weight 8, war boost to 9).",
+      "signal": "BEARISH",
+      "value": "Brent: $105.33/bbl (+0.30%). Stable but elevated — Hormuz partially blocked. No supply relief with peace talks collapsed.",
+      "impact": "Sustained headwind for India's CAD, OMCs, aviation, FMCG margins. Caps the gap-up rally duration. Prevents a full rally sustain as India-specific macro pressure remains."
+    },
+    {
+      "rank": 4,
+      "id": "FII_FLOW_TREND",
+      "name": "FII Flow Trend — R4 RESET",
+      "adjusted_weight": 7,
+      "base_weight": 7,
+      "weight_change_reason": "MAJOR CHANGE FROM PM: FII returned to net buying +₹999cr on April 24. Consecutive selling days = 0. R4 auto-trigger (18-day streak) is now RESET. Weight returns to base 7. Signal flips from BEARISH to MILDLY BULLISH.",
+      "signal": "MILDLY_BULLISH",
+      "value": "FII net: +₹999 crore on April 24. First net buying in 7 weeks. Ends 18-consecutive-day selling streak. India received $106mn inflow — first positive flow after cumulative $5bn outflow.",
+      "impact": "Structural bearish headwind from FII has materially reduced. Does not reverse the YTD outflow trend but removes the mechanical selling pressure that was capping every bounce. Watch for continuation on Monday — second consecutive FII buying day would be very bullish."
+    },
+    {
+      "rank": 5,
+      "id": "ASIAN_MARKETS",
+      "name": "Asian Markets — AM Mode Override",
+      "adjusted_weight": 7,
+      "base_weight": 5,
+      "weight_change_reason": "AM mode: actual Asian market opens known. Weight 7 (override from base 5).",
+      "signal": "MILDLY_BULLISH",
+      "value": "Nikkei: +0.97%. Hang Seng: -0.16% (near flat). KOSPI: +0.90%. Broadly positive ex-Hong Kong.",
+      "impact": "Asian risk-on supports the gap-up. Nikkei and KOSPI both up ~1% — broad Asia positive. Hang Seng flat rather than negative (-0.16%) suggests China spillover risk is low today."
+    },
+    {
+      "rank": 6,
+      "id": "INDIA_VIX",
+      "name": "India VIX — Elevated Zone",
+      "adjusted_weight": 7,
+      "base_weight": 6,
+      "weight_change_reason": "AM mode override: VIX weight elevated to 7. VIX at 19.71 — elevated range confirmed.",
+      "signal": "NEUTRAL_BEARISH",
+      "value": "India VIX: 19.71. Elevated zone (18-25). Slightly higher than Friday PM reading of 18.36. Not in panic zone (>25), so no contrarian bounce signal.",
+      "impact": "Elevated VIX means options premiums are expensive — weighs on sentiment. Not high enough to signal a contrarian buy. Consistent with Iran war regime range. Gap-up may be met with hedged selling as institutions protect positions ahead of FOMC."
+    },
+    {
+      "rank": 7,
+      "id": "CALENDAR_EVENT",
+      "name": "Calendar Event — FOMC Day 1 (April 28-29)",
+      "adjusted_weight": 5,
+      "base_weight": 10,
+      "weight_change_reason": "R1 partial: VIX 19.71 (NOT below 14 — fails condition 1), consensus on hold >90% (meets condition 2). One of two R1 conditions met → weight reduced from 10 to 5. Same as PM assessment.",
+      "signal": "BEARISH_CAUTIONARY",
+      "value": "FOMC meeting starts today (April 28). Decision on April 29. Consensus: hold rates at current level. ~15% chance of 25bps cut. Kevin Warsh succession noise adds uncertainty.",
+      "impact": "FOMC Day 1 creates afternoon caution. Markets typically drift toward flat before FOMC decisions. Institutions reduce risk into FOMC → caps upside of gap-up. Hawkish hold statement (referencing oil-driven inflation) could extend FII selling of India."
+    },
+    {
+      "rank": 8,
+      "id": "RUPEE_DOLLAR",
+      "name": "Rupee-Dollar Rate — War Amplified",
+      "adjusted_weight": 6,
+      "base_weight": 6,
+      "weight_change_reason": "Iran war active: bearish signals amplified.",
+      "signal": "BEARISH",
+      "value": "USD/INR: 94.26 (+0.48% INR weakening Friday). Pre-war level: 83-86.",
+      "impact": "INR at historic weak levels. Erodes FII USD-denominated returns — keeps structural selling incentive alive. Weak rupee amplified by war multiplier. However FII net bought yesterday — suggests some India-specific positioning despite currency headwind."
+    },
+    {
+      "rank": 9,
+      "id": "MACRO_REGIME",
+      "name": "Active Macro Regime — Iran War / Hormuz Blockade",
+      "adjusted_weight": 7,
+      "base_weight": 3,
+      "weight_change_reason": "Iran war active: effective weight 7 (per regime multiplier).",
+      "signal": "BEARISH",
+      "value": "Iran war active since Feb 28 2026. Talks collapsed April 25. No regime end signals. Crude $105+. INR at 94+.",
+      "impact": "Bearish multiplier on all India trades. Every bullish factor is muted; every bearish factor is amplified. Gap-up will face structural headwinds by 11 AM as Iran regime effects reassert."
+    },
+    {
+      "rank": 10,
+      "id": "OPTIONS_EXPIRY_GAMMA",
+      "name": "F&O Options Expiry Gamma",
+      "adjusted_weight": 5,
+      "base_weight": 3,
+      "weight_change_reason": "Next weekly expiry May 2 (4 days from April 28). Weight scaling: 3-7 days before = 5.",
+      "signal": "MAX_PAIN_GRAVITY",
+      "value": "Weekly expiry May 2 (Thursday). Monthly expiry April 23 already passed. Max pain estimate ~24,000.",
+      "impact": "Max pain gravity at 24,000 will pull market toward that level by expiry. Gap-up opens above 24,000 → selling pressure to pull back toward max pain. Supports WAIT_15_MIN approach."
+    },
+    {
+      "rank": 11,
+      "id": "DII_COUNTERBALANCE",
+      "name": "DII Counterbalance — SIP Floor",
+      "adjusted_weight": 4,
+      "base_weight": 4,
+      "weight_change_reason": "No change.",
+      "signal": "NEUTRAL_BULLISH_FLOOR",
+      "value": "DII bought ₹13,490 crore on April 24 (per PM data). SIP inflows mechanical floor.",
+      "impact": "Strong DII buying cushions any intraday fade. Provides floor near 23,800-23,900. Does not create rally but prevents full gap-fade. Reduces downside risk."
+    },
+    {
+      "rank": 12,
+      "id": "DMA_200_PROXIMITY",
+      "name": "200-DMA Proximity",
+      "adjusted_weight": 3,
+      "base_weight": 3,
+      "weight_change_reason": "No change.",
+      "signal": "NEUTRAL",
+      "value": "Nifty previous close 23,897.95. 200-DMA: 23,530.43. Distance: +1.56%. After gap-up: ~+2.56% above 200-DMA.",
+      "impact": "Gap-up takes Nifty further from 200-DMA — reduces algorithmic sell-stop risk. 200-DMA at 23,530 is a strong floor in a bearish scenario. Current gap-up moves Nifty comfortably above this level."
+    },
+    {
+      "rank": 13,
+      "id": "EUROPEAN_MARKETS",
+      "name": "European Markets",
+      "adjusted_weight": 0,
+      "base_weight": 4,
+      "weight_change_reason": "AM mode: European markets not yet open at 8:30 AM IST. Weight = 0.",
+      "signal": "NOT_AVAILABLE",
+      "value": "Not open.",
+      "impact": "Not applicable. Monitor at 1:30 PM IST for intraday direction signal."
+    }
+  ],
+  "intraday_timeline": {
+    "9:15_to_9:30": "High volatility opening 15 minutes. Nifty expected to open near 24,100-24,150. Key diagnostic: does it hold above 24,000? IT sector stocks (Infosys, TCS, HCLTech) will set the tone — if IT opens flat rather than down, broader market can test 24,200. FII direction at open is critical — continuation of Friday buying is very bullish signal.",
+    "9:30_to_11:00": "If Nifty holds 24,000 by 9:30 AM, expect test of 24,200-24,300 resistance. IT stocks key. Positive FII flow would sustain up move. Watch Brent crude intraday — any spike above $108 would be negative.",
+    "11:00_to_13:00": "FOMC caution likely sets in. Institutional de-risking ahead of Fed decision tomorrow. Nifty likely drifts from intraday high. Profit booking near 24,200+ resistance. Crude and rupee pressure reasserts in this window.",
+    "13:00_to_15:30": "DII SIP buying provides floor. Max pain gravity (~24,000) pulls market lower from any intraday highs. F&O positioning ahead of May 2 expiry. Expected close: 24,000-24,100 range. If FII net positive again on Monday, close may be higher (24,100-24,200)."
+  },
+  "overnight_pre_check": {
+    "pre_id_1_status": "BASE_CASE_PLAYED_OUT",
+    "details": "No Trump Truth Social announcement on Iran overnight. Ceasefire remains extended with no formal expiry. Peace talks remain collapsed. This corresponds to base case (45% probability in PRE) — no directional Iran catalyst overnight. However PRE is NOT fully resolved — Trump can still post during Monday's trading hours, maintaining intraday tail risk of ±2%.",
+    "intraday_pre_risk": "ACTIVE — 35% escalation scenario remains possible during trading hours. Monitor Trump Truth Social real-time."
+  },
+  "v2_refinements_applied": {
+    "R1_applied": true,
+    "R1_details": "FOMC April 28-29. VIX 19.71 (NOT below 14 — fails condition 1). Consensus hold >90% (meets condition 2). One of two R1 conditions met → CALENDAR_EVENT weight reduced from 10 to 5.",
+    "R2_applied": true,
+    "R2_details": "PRE remains active (PROBABLE_PRE). Base case played out overnight but Trump can still post during trading hours. PRE weight reduced from 10 to 8 as overnight window has passed without announcement.",
+    "R3_applied": false,
+    "R3_details": "RBI MPC June 3-5. Not applicable.",
+    "R4_applied": false,
+    "R4_applied_note": "R4 RESET. FII returned to net buying +₹999cr on April 24. Consecutive selling days = 0. Auto-trigger no longer active. Signal flips to MILDLY_BULLISH at base weight 7."
+  },
+  "historical_analogues_referenced": [
+    {
+      "analogue_id": "M",
+      "name": "CEASEFIRE RELIEF",
+      "relevance": "NOT applying Pattern 2 (geopolitical relief sustain). Iran PRE still active, crude $105. This is NOT a ceasefire relief gap-up — it is a US-tech-driven gap-up in a bearish Iran regime.",
+      "key_distinction": "April 9 ceasefire relief was genuine resolution with crude falling sharply. Today's gap-up is US earnings/tech driven with Iran conflict ongoing."
+    },
+    {
+      "analogue_id": "L",
+      "name": "IRAN WAR SUSTAINED",
+      "relevance": "Background regime still applies. But FII reversal introduces a bullish break from the pure sustained-drift narrative. Monitor if FII continues buying.",
+      "historical_sensex_move": "-2.9%"
+    }
+  ],
+  "internal_reasoning": "The PM prediction's HIGH_VOLATILITY_UNCERTAIN call has partially resolved into the base case — no Trump announcement overnight, with Nasdaq's +1.63% record close on Intel earnings providing an additional gap-up boost beyond what the flat base case implied, pushing Gift Nifty to 24,134 (+0.99%). The single most significant development versus the PM prediction is FII returning to net buying (+₹999cr on April 24), breaking the 18-day consecutive selling streak that had R4 auto-triggered at weight 9; this structural shift materially reduces the mechanical selling headwind and is the first genuine bullish signal in weeks. However, the gap-up is not geopolitical relief — crude remains at $105, the Iran PRE is still technically active with 35% intraday escalation risk, and FOMC Day 1 starting Monday will create afternoon caution — so Pattern 2 (sustain) does not apply, and the market is expected to partially fade from the gap-open high toward 24,000-24,100 by close. The combination of FOMC caution, IT sector structural weakness (Infosys/HCLTech guidance cuts, Nifty IT -10% in one week), and max pain gravity at ~24,000 makes WAIT_15_MIN the correct approach — confirm Nifty holds 24,000 by 9:30 AM before any long positioning."
+}

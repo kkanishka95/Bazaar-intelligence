@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "date": "2026-04-25",
+    "scan_time_ist": "12:00 IST",
+    "status": "PROBABLE_PRE"
+  },
+  "pre_events": [
+    {
+      "pre_id": 1,
+      "confidence": "MEDIUM",
+      "authority": "US President Donald Trump",
+      "description": "Trump canceled the Witkoff/Kushner diplomatic trip to Islamabad for Iran peace talks today (April 25), citing Iran's posture during negotiations. Iran peace talks are now stalled with no unified proposal from Tehran. Trump has a documented pattern of impulsive Truth Social posts on Iran that move markets overnight. Strait of Hormuz remains effectively blockaded, crude oil above $107/bbl. Trump may announce escalation (tariffs, military threat) or a surprise reversal overnight before Indian market open.",
+      "deadline": "Before Indian market open, April 28, 2026 (9:15 AM IST) — no formal deadline announced but elevated overnight announcement risk given talks collapse",
+      "resolves_before_market_open": true,
+      "scenario_a": {
+        "outcome": "Trump posts surprise diplomatic signal — Iran submits unified proposal, or Witkoff/Kushner trip is rescheduled with breakthrough framing. Ceasefire solidifies. Crude falls below $90. India market gaps up on oil relief + EM risk-on.",
+        "market_impact": "Gap-up +1.5 to +2.5 percent on Nifty; oil & gas, aviation, paint sectors lead rally",
+        "historical_analogue": "April 8 2026 ceasefire announcement — Nifty gapped up ~2.1% at open",
+        "probability_pct": 20
+      },
+      "scenario_b": {
+        "outcome": "Trump posts escalation warning on Truth Social — threatens tariffs on China/India for Iran trade, signals military action, or declares ceasefire formally over. Crude spikes above $115. India gaps down sharply on oil shock + risk-off EM outflows.",
+        "market_impact": "Gap-down -2 to -4 percent on Nifty; OMCs, aviation, FMCG, metals hit hardest; INR weakens",
+        "historical_analogue": "April 13 2026 — Trump threatened 50% tariffs on China re Iran arms, Nifty fell ~3.2% intraday",
+        "probability_pct": 35
+      },
+      "base_case": {
+        "outcome": "No significant overnight Trump announcement on Iran. Markets digest talks cancellation already priced in (Sensex fell 965 pts on April 24). Nifty opens flat to mildly negative.",
+        "market_impact": "Flat to -0.5 percent; continuation of April 24 weakness without fresh catalyst",
+        "probability_pct": 45
+      },
+      "floor_volatility_pct": 1.5,
+      "source_url": "https://abc7.com/live-updates/iran-war-straight-hormuz-ceasefire-trump-israel-lebanon/18927353/",
+      "source_headline": "Iran live updates: Trump cancels Witkoff, Kushner trip to Islamabad for peace talks"
+    }
+  ],
+  "background_pre": {
+    "active": true,
+    "description": "Ongoing Iran-US war with fragile ceasefire. US-Israeli strikes on Iran began Feb 28 2026. Ceasefire declared April 8, extended by Trump on April 21 (no fixed deadline — lasts until Iran submits unified proposal). Strait of Hormuz blockaded; crude oil above $107/bbl. Iran has seized two ships near the strait. Peace talks canceled April 25 (Witkoff/Kushner trip to Islamabad called off). Iran foreign minister reportedly still expected in Pakistan for second round of negotiations — conflicting signals. No imminent resolution. Weekly escalation probability elevated following talks collapse today.",
+    "weekly_scenarios": {
+      "breakthrough_probability_pct": 10,
+      "escalation_probability_pct": 30,
+      "status_quo_probability_pct": 60
+    }
+  },
+  "additional_context": {
+    "fed_chair_succession": {
+      "relevant": true,
+      "description": "DOJ closed investigation into Fed Chair Jerome Powell on April 24-25, opening path for Kevin Warsh nomination as next Fed Chair. This is a US market-moving development. Not an overnight India-specific PRE but adds to global macro uncertainty. Watch for Trump announcements on this front.",
+      "india_market_impact": "Indirect — Fed Chair uncertainty may weigh on USD/INR and global risk appetite if Warsh is seen as more hawkish or politically compliant"
+    },
+    "crude_oil_context": {
+      "level_usd_bbl": 107,
+      "trajectory": "Elevated and volatile due to Hormuz blockade; Iran re-imposed strait restrictions recently after brief reopening — triggered 15%+ weekly spike",
+      "india_impact": "Critical — India imports ~85% of crude needs; each $10/bbl increase adds ~0.4% to CAD. At $107/bbl, strong headwind for OMCs, INR, and fiscal math."
+    },
+    "india_market_status_april24": {
+      "sensex_close": 76700,
+      "nifty_close": 23898,
+      "sensex_change_pts": -965,
+      "nifty_change_pts": -275,
+      "driver": "US-Iran conflict escalation fears + crude oil surge + IT sector weakness"
+    }
+  },
+  "no_pre_declaration": null,
+  "scan_sources": [
+    "https://abc7.com/live-updates/iran-war-straight-hormuz-ceasefire-trump-israel-lebanon/18927353/",
+    "https://www.aljazeera.com/news/2026/4/21/trump-announces-extending-iran-ceasefire-but-says-blockade-remains",
+    "https://www.cnbc.com/2026/04/21/trump-iran-war-ceasefire.html",
+    "https://fortune.com/2026/04/21/trump-iran-deal-truth-social-posts-peace-talks-warning/",
+    "https://www.cnbc.com/2026/04/13/trump-threatens-50percent-tariffs-on-china-as-report-suggests-plans-for-arms-shipment-to-iran.html",
+    "https://en.wikipedia.org/wiki/2026_Iran_war_ceasefire",
+    "https://www.federalreserve.gov/aboutthefed/boardmeetings/20260420closed.htm",
+    "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx"
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "date": "2026-04-25",
+    "mode": "pm",
+    "collection_time_ist": "14:20 IST",
+    "searches_completed": 15,
+    "notes": "April 25 is a Saturday. Indian & European markets closed. US markets closed. All price data reflects Friday April 24, 2026 closing values unless noted."
+  },
+  "india_markets": {
+    "nifty_level": 23897.95,
+    "nifty_change_pct": -1.14,
+    "nifty_change_pts": -275.10,
+    "sensex_level": 76664.21,
+    "sensex_change_pct": -1.29,
+    "sensex_change_pts": -999.79,
+    "india_vix": 18.36,
+    "nifty_200dma": 23505.47,
+    "nifty_vs_200dma_pct": 1.67,
+    "market_status": "closed",
+    "fii_net_crore": -20410.15,
+    "dii_net_crore": 13490.80,
+    "fii_consecutive_selling_days": 18,
+    "fii_5day_total_crore": -12500.0
+  },
+  "macro": {
+    "brent_crude_usd": 104.43,
+    "brent_change_pct": -0.61,
+    "usd_inr": 94.2625,
+    "inr_change_pct": -0.48,
+    "gold_usd": 4722.19,
+    "us_10yr_yield": 4.33
+  },
+  "us_markets": {
+    "sp500_level": 7165.80,
+    "sp500_change_pct": 0.78,
+    "dow_level": 49231.00,
+    "dow_change_pct": -0.11,
+    "nasdaq_level": 24837.00,
+    "nasdaq_change_pct": 1.63,
+    "us_market_status": "closed",
+    "sp500_futures_change_pct": null
+  },
+  "am_mode_only": {
+    "gift_nifty_level": null,
+    "gift_nifty_change_pts": null,
+    "gift_nifty_change_pct": null,
+    "nikkei_change_pct": null,
+    "hang_seng_change_pct": null,
+    "kospi_change_pct": null
+  },
+  "pm_mode_only": {
+    "ftse_change_pct": -1.25,
+    "dax_change_pct": -0.11,
+    "cac_change_pct": -0.84,
+    "us_futures_sp500_pct": null
+  },
+  "upcoming_calendar_events": [
+    {
+      "event": "FOMC Meeting & Rate Decision",
+      "date": "2026-04-28 to 2026-04-29",
+      "importance": "HIGH",
+      "consensus_probability": "Hold at current rate; ~15% chance of 25bps cut given oil shock and inflation concerns",
+      "india_impact": "HIGH — Fed decision drives USD/INR and FII equity flows; a hawkish hold could extend FII selling"
+    },
+    {
+      "event": "US Q1 2026 GDP Advance Estimate",
+      "date": "2026-04-30",
+      "importance": "HIGH",
+      "consensus_probability": "Consensus ~1.8% annualized growth; downside risk from oil shock",
+      "india_impact": "MEDIUM — Weak US GDP could trigger risk-off, further FII selling from India"
+    },
+    {
+      "event": "RBI MPC Meeting (FY27 Second Bi-monthly)",
+      "date": "2026-06-03 to 2026-06-05",
+      "importance": "HIGH",
+      "consensus_probability": "Repo rate currently 5.25%; market pricing ~50% chance of 25bps cut given crude oil risk to inflation",
+      "india_impact": "HIGH — Direct impact on bond yields, banking sector, and INR"
+    },
+    {
+      "event": "US-Iran Peace Talks (Pakistan-hosted round — canceled April 25)",
+      "date": "2026-04-25",
+      "importance": "HIGH",
+      "consensus_probability": "Talks canceled; next round date unknown; ceasefire remains extended indefinitely",
+      "india_impact": "HIGH — Strait of Hormuz status directly drives crude prices and INR; Indian markets highly sensitive"
+    },
+    {
+      "event": "India Q4 FY26 Corporate Earnings Season (Ongoing)",
+      "date": "2026-04-25 to 2026-05-15",
+      "importance": "HIGH",
+      "consensus_probability": "IT sector guidance disappointed (Infosys -7%, HCLTech -5.8%); banking and pharma results pending",
+      "india_impact": "HIGH — Sector-specific sharp moves; IT sector already down 5%+ this week"
+    },
+    {
+      "event": "FOMC Meeting",
+      "date": "2026-06-16 to 2026-06-17",
+      "importance": "MEDIUM",
+      "consensus_probability": "Rate path depends on April meeting outcome and inflation data",
+      "india_impact": "MEDIUM — Influences global liquidity and FII flows"
+    }
+  ],
+  "top_news_headlines": [
+    {
+      "headline": "Trump cancels Witkoff & Kushner Pakistan trip; US-Iran direct talks collapse on April 25",
+      "source": "Washington Post / CBS News",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "Brent crude above $104/bbl as Iran refuses to reopen Strait of Hormuz despite US ceasefire extension",
+      "source": "CNBC / Reuters",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "Nifty 50 drops 1.14%, Sensex falls 1000 pts on Friday — third consecutive day of losses; IT sector plunges 5%+",
+      "source": "Business Standard",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "JP Morgan downgrades Indian equities to Neutral from Overweight, citing high valuations and energy shock headwinds",
+      "source": "JP Morgan / Business Standard",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "S&P 500 and Nasdaq close at record highs on Friday, boosted by Intel +23% after strong earnings",
+      "source": "CNBC",
+      "relevance_to_india": "MEDIUM",
+      "sentiment": "BULLISH"
+    },
+    {
+      "headline": "FIIs continue net selling in India; ₹39,220 crore pulled from Indian equities in April 2026 MTD",
+      "source": "NSE India / Groww",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "Infosys down 7.1%, HCLTech down 5.8% after revenue guidance disappoints; TCS posts first annual revenue dip in 20 years",
+      "source": "Business Standard / Economic Times",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "Bank of England warns global equity markets are overvalued and facing potential sharp correction",
+      "source": "CNBC / BBC",
+      "relevance_to_india": "MEDIUM",
+      "sentiment": "BEARISH"
+    },
+    {
+      "headline": "SEBI advisory panel recommends approving NSE co-location case settlement, removing key regulatory overhang",
+      "source": "Business Standard",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BULLISH"
+    },
+    {
+      "headline": "Iran seizes two ships in Strait of Hormuz; US Navy authorized to destroy vessels laying mines",
+      "source": "NBC News / NPR",
+      "relevance_to_india": "HIGH",
+      "sentiment": "BEARISH"
+    }
+  ],
+  "iran_hormuz_status": {
+    "ceasefire_active": true,
+    "latest_development": "Trump extended ceasefire indefinitely on April 21 to allow Iran to unify around a proposal, but canceled Pakistan-hosted direct talks on April 25 after Iranian officials left Islamabad. Iran seized two ships in the Strait on April 22 and refuses to reopen the waterway despite the ceasefire, calling the US naval blockade a violation. Trump authorized the US Navy to destroy any vessel laying mines or disrupting passage. Israel-Lebanon ceasefire extended 3 weeks.",
+    "strait_status": "partially open",
+    "crude_impact": "Brent above $104/bbl (+~17% on the week as of April 25); major supply disruption from Middle Eastern producers; India's oil import bill materially elevated, pressuring INR and current account deficit"
+  }
+}

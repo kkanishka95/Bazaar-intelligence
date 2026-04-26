@@ -1,0 +1,239 @@
+{
+  "metadata": {
+    "date": "2026-04-25",
+    "generated_at_ist": "16:30",
+    "agent": "EVALUATOR",
+    "pm_prediction_scored": "2026-04-24_pm.json — FILE NOT FOUND",
+    "am_prediction_scored": "2026-04-25_am.json",
+    "special_note": "WEEKEND EVAL: April 25 2026 is a Saturday. Indian markets closed. PM prediction file for 2026-04-24 does not exist — no PM prediction was generated on Friday April 24. AM prediction (2026-04-25_am.json) was generated Saturday 8:30 AM IST and predicts for Monday April 28, 2026 — actual outcome is NOT yet known at time of this evaluation. PM scoring is N/A (missing file). AM scoring is PENDING (outcome unavailable). This eval documents the pre-market quality assessment of the AM prediction only."
+  },
+  "actual_market_data": {
+    "scoring_date_market_status": "CLOSED — Saturday April 25 2026",
+    "last_trading_day": "2026-04-24 (Friday)",
+    "nifty_open": "N/A — markets closed Saturday",
+    "nifty_close": 23897.95,
+    "nifty_close_note": "This is Friday April 24 closing value; no Saturday trading",
+    "nifty_high": "N/A — Friday intraday high not in pm_data.json",
+    "nifty_low": "N/A — Friday intraday low not in pm_data.json",
+    "nifty_open_vs_prev_close_pct": "N/A",
+    "nifty_intraday_direction": "N/A — Saturday no trading",
+    "sensex_close": 76664.21,
+    "sensex_close_note": "Friday April 24 close: -1.29% (-999.79 pts)",
+    "fii_net_actual_crore_apr24": 999,
+    "fii_net_note": "FII returned to net buying +₹999 crore on April 24 per AM prediction metadata — first net buying in 7 weeks, breaking 18-day consecutive selling streak",
+    "crude_eod_usd": 104.43,
+    "crude_note": "Brent as of Friday April 24 close; -0.61% on the day",
+    "inr_eod": 94.2625,
+    "india_vix_friday_close": 18.36,
+    "next_trading_day": "2026-04-28 (Monday)"
+  },
+  "pm_scoring": {
+    "status": "NOT_AVAILABLE",
+    "reason": "File 2026-04-24_pm.json does not exist. No PM prediction was generated on Friday April 24, 2026. PM scoring cannot be performed without the source prediction file.",
+    "direction_score": null,
+    "direction_score_max": 3,
+    "magnitude_score": null,
+    "magnitude_score_max": 2,
+    "pre_score": null,
+    "pre_score_max": 2,
+    "dominant_factor_score": null,
+    "dominant_factor_score_max": 3,
+    "total_pm_score": null,
+    "total_pm_score_max": 10,
+    "pm_prediction_result": "NOT_SCORED",
+    "action_required": "Investigate why PM agent did not run on 2026-04-24. Check scheduler logs. If PM agent skips Fridays by design when next day is a weekend, this is expected behavior — document it. If it was an execution failure, fix the scheduler."
+  },
+  "am_scoring": {
+    "status": "PENDING — outcome not yet known",
+    "prediction_for": "2026-04-28 (Monday)",
+    "scoring_available_after": "2026-04-28 16:30 IST",
+    "gift_nifty_implied_level": 24134,
+    "gift_nifty_implied_pct": "+0.99%",
+    "previous_nifty_close": 23897.95,
+    "implied_gap_pts": "+236",
+    "predicted_call": "GAP_UP_MODERATE",
+    "predicted_intraday": "PARTIAL_REVERSAL (BULLISH_WITH_FADE_RISK)",
+    "predicted_pattern": "US_TECH_DRIVEN_GAP_UP_IN_MACRO_BEARISH_REGIME",
+    "suggested_approach": "WAIT_15_MIN",
+    "key_support_predicted": ["24000", "23898", "23530"],
+    "key_resistance_predicted": ["24134", "24300", "24500"],
+    "max_pain_predicted": "24000",
+    "gift_nifty_accuracy_score": "PENDING",
+    "gift_nifty_accuracy_max": 3,
+    "intraday_direction_score": "PENDING",
+    "intraday_direction_score_max": 3,
+    "approach_score": "PENDING",
+    "approach_score_max": 2,
+    "level_accuracy_score": "PENDING",
+    "level_accuracy_score_max": 2,
+    "total_am_score": "PENDING",
+    "total_am_score_max": 10,
+    "am_prediction_result": "PENDING",
+    "pre_quality_note": "PRE-OUTCOME QUALITY ASSESSMENT (not a score): The AM prediction demonstrates strong internal consistency. The PARTIAL_REVERSAL call is well-reasoned: (1) Gap-up source correctly identified as US-tech specific (Intel earnings) rather than geopolitical relief — prevents overfitting to Pattern 2 (ceasefire rally). (2) FOMC Day 1 caution as reversal trigger is well-timed for Monday afternoon. (3) FII reversal signal correctly flipped R4 auto-trigger — dynamic adjustment shows model responsiveness. (4) Max pain gravity at 24,000 coheres with WAIT_15_MIN approach. Main risk to prediction: if FII continues buying on Monday (second consecutive day), the PARTIAL_REVERSAL may not materialize and market may sustain above 24,200."
+  },
+  "factor_analysis": {
+    "note": "Factor analysis is based on the AM prediction (2026-04-25_am.json) which predicts for April 28. Outcome-based classification (PERFECT/OVERWEIGHTED/etc.) cannot be determined until April 28 close. The following is a PRE-OUTCOME structural assessment of factor weights for model calibration review.",
+    "factors": [
+      {
+        "factor_id": "US_MARKETS_GIFT_NIFTY",
+        "assigned_weight": 10,
+        "signal": "BULLISH",
+        "pre_outcome_assessment": "Weight 10 appropriate for AM mode where Gift Nifty is the definitive gap anchor. Intel +23% driving Nasdaq +1.63% to record is a clear, high-conviction bullish signal. No calibration concern flagged.",
+        "classification": "PENDING_OUTCOME",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "PENDING_RESOLUTION_EVENT",
+        "assigned_weight": 8,
+        "signal": "VOLATILE",
+        "pre_outcome_assessment": "Weight reduced from 10 to 8 correctly as overnight window passed without escalation. PRE still active for intraday is accurate — Iran PRE has a 35% intraday escalation scenario. Weight 8 during a Trump-active intraday session is defensible. Could be argued as 7 if no new Iran headlines emerge by Monday open.",
+        "classification": "PENDING_OUTCOME",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "CRUDE_OIL",
+        "assigned_weight": 9,
+        "signal": "BEARISH",
+        "pre_outcome_assessment": "Brent at $105.33 (+0.30% — stable, not spiking). Weight 9 was justified by the Iran war active boost. However, crude is not actively escalating — it is holding, not rising. A weight of 7-8 might better reflect a stable-but-elevated crude vs a rising crude. Watch if Monday crude moves: if stable, weight 9 will look slightly overweighted.",
+        "classification": "PENDING_OUTCOME",
+        "calibration_flag": "MILD — crude stable vs escalating; confirm weight 9 applies only when crude is rising, not merely elevated",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "FII_FLOW_TREND",
+        "assigned_weight": 7,
+        "signal": "MILDLY_BULLISH",
+        "pre_outcome_assessment": "Critical dynamic adjustment: R4 auto-trigger correctly reset after FII returned to net buying (+₹999cr on April 24). Signal flip from BEARISH to MILDLY_BULLISH is well-supported — first net buying in 7 weeks is a structural change. If FII continues buying on Monday, weight 7 at MILDLY_BULLISH will be underweighted and should be 8-9 BULLISH.",
+        "classification": "PENDING_OUTCOME",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "ASIAN_MARKETS",
+        "assigned_weight": 7,
+        "signal": "MILDLY_BULLISH",
+        "pre_outcome_assessment": "Nikkei +0.97%, KOSPI +0.90%, Hang Seng -0.16%. Weight 7 appropriate for AM mode with known Asian prints. Broad positive ex-Hong Kong is consistent with MILDLY_BULLISH. No calibration concern.",
+        "classification": "PENDING_OUTCOME",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "INDIA_VIX",
+        "assigned_weight": 7,
+        "signal": "NEUTRAL_BEARISH",
+        "pre_outcome_assessment": "VIX at 19.71 — elevated but not panic zone. The AM VIX reading is slightly higher than Friday's 18.36 (prediction says 19.71 but pm_data.json shows 18.36 on Friday). The 19.71 reading appears to be the Saturday morning Gift Nifty-implied VIX estimate. NEUTRAL_BEARISH appropriate for 18-25 range. Weight 7 defensible.",
+        "classification": "PENDING_OUTCOME",
+        "data_flag": "Verify if VIX 19.71 is Saturday Gift Nifty-implied or Friday close — pm_data.json shows 18.36 at Friday close",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "CALENDAR_EVENT",
+        "assigned_weight": 5,
+        "signal": "BEARISH_CAUTIONARY",
+        "pre_outcome_assessment": "FOMC April 28-29. R1 partial: VIX fails condition 1 (not below 14), consensus hold meets condition 2. Weight 5 is consistent with PM assessment. BEARISH_CAUTIONARY for afternoon FOMC caution is well-calibrated — aligns with WAIT_15_MIN suggestion and expected PM fade.",
+        "classification": "PENDING_OUTCOME",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "RUPEE_DOLLAR",
+        "assigned_weight": 6,
+        "signal": "BEARISH",
+        "pre_outcome_assessment": "USD/INR at 94.26 — historically weak. War-amplified bearish signal is appropriate. FII net buying despite this level suggests USD returns concern is not deterring all FII. Weight 6 is reasonable but could see downgrade to 5 if FII continues buying regardless of INR.",
+        "classification": "PENDING_OUTCOME",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "MACRO_REGIME",
+        "assigned_weight": 7,
+        "signal": "BEARISH",
+        "pre_outcome_assessment": "Iran war active since Feb 28. Regime multiplier driving weight from base 3 to 7 is mechanically correct. The regime correctly colors all other factors. Weight 7 appropriate as long as war regime is active.",
+        "classification": "PENDING_OUTCOME",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "OPTIONS_EXPIRY_GAMMA",
+        "assigned_weight": 5,
+        "signal": "MAX_PAIN_GRAVITY",
+        "pre_outcome_assessment": "Next weekly expiry May 2 (4 days away). Max pain at 24,000 creating gravity is a sound structural observation. Weight 5 for 3-7 days before expiry is per framework. The cohesion with WAIT_15_MIN (confirm hold above 24,000) is mechanically tight.",
+        "classification": "PENDING_OUTCOME",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "DII_COUNTERBALANCE",
+        "assigned_weight": 4,
+        "signal": "NEUTRAL_BULLISH_FLOOR",
+        "pre_outcome_assessment": "DII bought ₹13,490 crore on April 24. SIP mechanical floor is a structurally correct observation. Weight 4 (base weight, unchanged) is appropriate. Floor near 23,800-23,900 is coherent with 200-DMA at 23,530.",
+        "classification": "PENDING_OUTCOME",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "DMA_200_PROXIMITY",
+        "assigned_weight": 3,
+        "signal": "NEUTRAL",
+        "pre_outcome_assessment": "200-DMA at 23,530.43. After gap-up, Nifty would be +2.56% above 200-DMA — comfortably above. Reduced algorithmic sell-stop risk is accurate. Weight 3 appropriate as this is a background structural factor in this regime.",
+        "classification": "PENDING_OUTCOME",
+        "optimal_weight_in_hindsight": null
+      },
+      {
+        "factor_id": "EUROPEAN_MARKETS",
+        "assigned_weight": 0,
+        "signal": "NOT_AVAILABLE",
+        "pre_outcome_assessment": "Correctly zeroed out at 8:30 AM IST as European markets not yet open. Framework correctly handled this timing limitation.",
+        "classification": "CORRECTLY_INACTIVE",
+        "optimal_weight_in_hindsight": 0
+      }
+    ]
+  },
+  "root_cause_analysis": {
+    "required": true,
+    "pm_score_below_threshold": null,
+    "am_score_below_threshold": null,
+    "root_cause_for_missing_pm_prediction": {
+      "failure_mode": "MISSING_PREDICTION_FILE",
+      "technical_explanation": "No PM prediction was generated on Friday April 24, 2026 (2026-04-24_pm.json does not exist). This is the primary gap in today's evaluation. Two possible explanations: (1) PM agent correctly skipped generating a PM prediction on Friday when the next trading day is Monday April 28 — the AM agent instead generated a weekend AM prediction for Monday. (2) PM agent execution failed on April 24 and the run was lost. The existence of 2026-04-25_am.json (Saturday AM prediction for Monday) suggests option 1 may be by design.",
+      "is_model_failure": false,
+      "is_scheduler_gap": true,
+      "is_design_decision_unknown": true,
+      "recommended_fix": "Clarify agent scheduling: should PM agent run on Fridays predicting Monday open? Currently it appears PM agent was skipped on Friday April 24. Document the scheduling decision — if intentional, note that Friday PM → Monday open predictions are handled by Saturday AM agent instead. If unintentional, fix scheduler."
+    }
+  },
+  "new_parameter_flags": [
+    {
+      "parameter_name": "US_SEMICONDUCTOR_EARNINGS_CATALYST",
+      "description": "Major US semiconductor/tech company earnings beats directly drive Indian IT sector gap-open direction, independent of broader macro or Iran regime headwinds",
+      "base_weight_suggestion": 6,
+      "applies_when": "Major US semiconductor or large-cap tech company (Intel, Nvidia, AMD, TSMC, Microsoft, Google) reports earnings after US market close — result is available by India's AM prediction window at 8:30 AM IST",
+      "transmission_mechanism": "Strong semiconductor earnings → Nasdaq gap-up → Gift Nifty rises → Indian IT sector opens higher regardless of macro bearish signals. The transmission is direct via Gift Nifty channel. Intel +23% drove Nasdaq +1.63% and Gift Nifty +0.99% on April 25 morning.",
+      "why_not_in_current_framework": "Current framework has US_MARKETS_GIFT_NIFTY as a composite factor capturing both futures and sector earnings. A separate semiconductor earnings sub-factor would help distinguish: (a) broad S&P rally vs (b) narrow tech-sector rally. Narrow rallies have different sustainment profiles for Indian IT.",
+      "times_flagged_this_quarter": 1,
+      "first_flagged_date": "2026-04-25"
+    }
+  ],
+  "pre_outcome_prediction_quality": {
+    "am_prediction_internal_consistency": "HIGH",
+    "am_prediction_key_strengths": [
+      "Correctly identified Intel +23% earnings as the gap-up driver — not confused with geopolitical relief, so correctly rejected Pattern 2 (ceasefire rally sustain)",
+      "FII R4 auto-trigger reset is dynamically applied — model correctly updated signal from BEARISH to MILDLY_BULLISH on first net buying day in 7 weeks",
+      "FOMC Day 1 caution as PM fade trigger is precisely timed — aligns with institutional de-risking behavior before Fed decisions",
+      "WAIT_15_MIN approach is internally coherent with max pain gravity at 24,000 and PARTIAL_REVERSAL bias",
+      "Explicitly called out that the gap-up is US-sector-specific (not broad macro risk-on), limiting rally sustainability — this is sophisticated pattern discrimination"
+    ],
+    "am_prediction_key_risks": [
+      "If FII continues net buying Monday (second consecutive day), PARTIAL_REVERSAL may not materialize — sustained FII buying would push toward SUSTAIN pattern",
+      "Crude at $105.33 was stable on Friday; if crude spikes Monday on Iran news, BEARISH factors amplify and market may not even sustain 24,000",
+      "India VIX reading of 19.71 in AM prediction vs 18.36 in pm_data.json Friday close needs verification — source of the 19.71 figure is unclear"
+    ]
+  },
+  "summary_for_quarterly_review": {
+    "pm_score": null,
+    "am_score": "PENDING",
+    "prediction_quality": "PM NOT_SCORED (file missing) | AM PENDING (April 28 outcome needed)",
+    "key_learning": "April 24 (Friday) PM agent did not run — gap in scheduler coverage for week-end to week-start transitions. Saturday AM prediction for Monday is well-constructed with high internal consistency. FII R4 dynamic reset shows model adaptability.",
+    "factors_needing_attention": [
+      "CRUDE_OIL: weight 9 applied when crude is stable-but-elevated (not rising) — may be overweighted in stable war-regime vs escalating crude",
+      "INDIA_VIX: verify data source for Saturday morning reading (19.71 vs Friday close 18.36)"
+    ],
+    "new_parameters_detected": 1,
+    "sessions_evaluated_this_quarter": 1,
+    "sessions_with_full_scoring": 0,
+    "sessions_pending_or_missing": 1
+  }
+}

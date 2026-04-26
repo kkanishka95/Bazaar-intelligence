@@ -1,0 +1,147 @@
+{
+  "analogues": [
+    {
+      "id": "A",
+      "name": "CHINA SHOCK",
+      "date": "2015-08-24",
+      "sensex_move": -5.94,
+      "trigger": "China Yuan devaluation EM rout FII exit India gap-down",
+      "map_to": "Any EM currency crisis China growth scare BOJ surprise rate hike",
+      "key_mechanism": "ASIAN_MARKETS",
+      "floor_volatility": 2.5,
+      "recovery_time_sessions": 15
+    },
+    {
+      "id": "B",
+      "name": "DEMONETISATION",
+      "date": "2016-11-09",
+      "sensex_move": -6.12,
+      "trigger": "Overnight surprise domestic policy with no leaks zero advance signal",
+      "map_to": "Any unannounced major Indian policy change",
+      "key_mechanism": "DOMESTIC_POLICY_SURPRISE",
+      "floor_volatility": 4.0,
+      "recovery_time_sessions": 30
+    },
+    {
+      "id": "C",
+      "name": "NBFC CRISIS",
+      "date": "2018-10-11",
+      "sensex_move": -3.80,
+      "trigger": "Domestic financial system stress slow-burn contagion credit market seizure",
+      "map_to": "Banking NBFC liquidity stress events credit market seizures",
+      "key_mechanism": "FII_FLOW_TREND",
+      "floor_volatility": 2.0,
+      "recovery_time_sessions": 45
+    },
+    {
+      "id": "D",
+      "name": "CORPORATE TAX CUT",
+      "date": "2019-09-20",
+      "sensex_move": 5.32,
+      "trigger": "Unscheduled positive fiscal surprise press conference FM",
+      "map_to": "Emergency fiscal stimulus unscheduled positive policy",
+      "key_mechanism": "DOMESTIC_POLICY_SURPRISE",
+      "floor_volatility": 3.5,
+      "recovery_time_sessions": 3
+    },
+    {
+      "id": "E",
+      "name": "COVID CASCADE",
+      "date": "2020-03-23",
+      "sensex_move": -13.15,
+      "trigger": "Pandemic plus global lockdown simultaneous economic shutdown",
+      "map_to": "Global simultaneous economic halt pandemic declaration",
+      "key_mechanism": "MACRO_REGIME",
+      "floor_volatility": 5.0,
+      "recovery_time_sessions": 160
+    },
+    {
+      "id": "F",
+      "name": "BOLD BUDGET",
+      "date": "2021-02-01",
+      "sensex_move": 4.66,
+      "trigger": "Budget massively exceeds expectations infrastructure privatisation",
+      "map_to": "Strong fiscal surprise bold infra or tax relief announcement",
+      "key_mechanism": "CALENDAR_EVENT",
+      "floor_volatility": 2.5,
+      "recovery_time_sessions": 1
+    },
+    {
+      "id": "G",
+      "name": "UKRAINE INVASION",
+      "date": "2022-02-24",
+      "sensex_move": -3.06,
+      "trigger": "Military invasion crude spike EM selloff",
+      "map_to": "Any major military conflict crude supply shock Hormuz threat",
+      "key_mechanism": "CRUDE_OIL",
+      "floor_volatility": 2.0,
+      "recovery_time_sessions": 14
+    },
+    {
+      "id": "H",
+      "name": "FED RATE SHOCK",
+      "date": "2022-06-13",
+      "sensex_move": -2.64,
+      "trigger": "Hot CPI aggressive Fed pivot EM capital flight",
+      "map_to": "Surprise hawkish central bank pivot inflation shock above consensus",
+      "key_mechanism": "US_MARKETS_GIFT_NIFTY",
+      "floor_volatility": 1.8,
+      "recovery_time_sessions": 20
+    },
+    {
+      "id": "I",
+      "name": "ELECTION SHOCK",
+      "date": "2024-06-04",
+      "sensex_move": -5.74,
+      "trigger": "Ruling party significantly underperforms exit polls coalition risk",
+      "map_to": "Any political continuity disruption coalition government formation",
+      "key_mechanism": "CALENDAR_EVENT",
+      "floor_volatility": 3.5,
+      "recovery_time_sessions": 10
+    },
+    {
+      "id": "J",
+      "name": "TRUMP TARIFFS",
+      "date": "2025-04-07",
+      "sensex_move": -4.83,
+      "trigger": "Announced trade war India directly impacted China retaliates",
+      "map_to": "Protectionist US trade actions bilateral tariff escalation",
+      "key_mechanism": "CALENDAR_EVENT",
+      "floor_volatility": 3.0,
+      "recovery_time_sessions": 7
+    },
+    {
+      "id": "K",
+      "name": "FED CUT CYCLE",
+      "date": "2024-09-19",
+      "sensex_move": 1.89,
+      "trigger": "First Fed rate cut after hiking cycle larger than expected",
+      "map_to": "Major central bank dovish pivot global liquidity expansion",
+      "key_mechanism": "CALENDAR_EVENT",
+      "floor_volatility": 1.5,
+      "recovery_time_sessions": 5
+    },
+    {
+      "id": "L",
+      "name": "IRAN WAR SUSTAINED",
+      "date": "2026-03",
+      "sensex_move": -2.9,
+      "trigger": "Prolonged military conflict sustained crude elevation FII exodus",
+      "map_to": "Any Gulf conflict threatening Hormuz crude supply chain",
+      "key_mechanism": "CRUDE_OIL",
+      "floor_volatility": 1.5,
+      "recovery_time_sessions": 60
+    },
+    {
+      "id": "M",
+      "name": "CEASEFIRE RELIEF",
+      "date": "2026-04-09",
+      "sensex_move": 4.0,
+      "trigger": "Announced geopolitical de-escalation oil supply threat removed",
+      "map_to": "Any resolution of active military conflict trade war pause",
+      "key_mechanism": "PENDING_RESOLUTION_EVENT",
+      "floor_volatility": 2.5,
+      "recovery_time_sessions": 3
+    }
+  ]
+}
