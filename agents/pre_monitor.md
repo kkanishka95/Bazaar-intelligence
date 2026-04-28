@@ -34,6 +34,9 @@ Market-moving authorities (in order of impact on Indian markets):
 8. "Market moving announcement expected tonight {DATE}"
 9. "Trump Truth Social Iran tariff post today {DATE}"
 10. "Geopolitical deadline tonight tomorrow {DATE}"
+11. "RBI circular notification {DATE}"
+12. "SEBI circular order regulation {DATE}"
+13. "India banking NBFC regulation announcement {DATE}"
 
 ## PRE CLASSIFICATION LEVELS
 
@@ -51,6 +54,15 @@ BACKGROUND PRE (ongoing binary situation without specific deadline):
 - Active binary geopolitical or macro situation (ongoing war, pending deal)
 - No specific overnight deadline
 - Action: Flag as BACKGROUND PRE, note scenario probabilities
+
+DOMESTIC_REGULATORY_SIGNAL (new classification — from Searches 11/12/13):
+- RBI or SEBI has issued a circular, notification, or order today
+- Not a binary PRE (outcome is already known — the circular exists)
+- But creates sector-specific asymmetric impact (banking/NBFC/mutual fund)
+- Action: Flag as DOMESTIC_REGULATORY_SIGNAL, identify affected sectors,
+  estimate intraday impact on Bank Nifty / sector indices
+- This is NOT a PRE — it does not get a scenario_a/scenario_b.
+  It feeds directly into the AM predictor as the 14th factor.
 
 NO PRE:
 - No qualifying events found
@@ -106,6 +118,20 @@ Write to data/{YYYY}/{MM}/{DATE}_pre.json:
       "status_quo_probability_pct": 65
     }
   },
+  "domestic_regulatory_signals": [
+    {
+      "signal_id": 1,
+      "authority": "RBI or SEBI",
+      "circular_reference": "Circular number or notification title",
+      "issued_date": "YYYY-MM-DD",
+      "description": "What the circular or order changes",
+      "affected_sectors": ["BANKING", "NBFC", "MUTUAL_FUNDS"],
+      "estimated_intraday_impact": "e.g. Bank Nifty -0.5% to -1.2% on ECL provisioning increase",
+      "sentiment": "BULLISH or BEARISH or NEUTRAL",
+      "source_url": "",
+      "source_headline": ""
+    }
+  ],
   "no_pre_declaration": "CLEAR — no qualifying pending resolution events detected for next session"
 }
 ```

@@ -92,7 +92,19 @@ Thresholds: 8-10 = EXCELLENT, 5-7 = GOOD, 0-4 = POOR
 
 ## STEP 3 — SCORE TODAY'S AM PREDICTION (intraday accuracy)
 
-### 3A — Opening Gap Score (0-3 points)
+### 3A — Opening Gap Score (0-3 points, with staleness penalty)
+
+Check am_data.json field: am_mode_only.gift_nifty_staleness_warning
+
+If gift_nifty_staleness_warning was TRUE and AM predictor used stale data (gift_nifty_freshness_status
+is "STALE_USED_AS_IS" in the AM prediction JSON):
+  → Apply staleness penalty: cap this section at 1 point maximum regardless of accuracy
+  → Add to root_cause_analysis: "gift_nifty_staleness_penalty: true — stale Gift Nifty
+    data used without re-fetch. This is a data quality failure, not a market call failure."
+
+If gift_nifty_staleness_warning was FALSE or AM predictor re-fetched fresh data:
+  → Score normally:
+
 Compare Gift Nifty implied gap vs actual open:
 - 3 points: Actual open within 0.2% of Gift Nifty implied level
 - 2 points: Actual open within 0.4% of implied
@@ -122,6 +134,23 @@ Did the market respect the predicted support/resistance levels?
 Thresholds: 8-10 = EXCELLENT, 5-7 = GOOD, 0-4 = POOR
 
 ## STEP 4 — DETAILED FACTOR ANALYSIS
+
+### DOMESTIC REGULATORY SIGNAL CHECK (always run for AM predictions)
+
+Read today's pre.json: data/{YYYY}/{MM}/{DATE}_pre.json
+Check domestic_regulatory_signals array.
+
+If signals were present:
+  → Did the AM predictor include DOMESTIC_REGULATORY_SIGNAL as the 14th factor?
+  → If YES: evaluate the weight and signal accuracy. Add to factor_analysis with factor_id "DOMESTIC_REGULATORY_SIGNAL".
+  → If NO: add to factor_analysis as classification MISSED with factor_id "DOMESTIC_REGULATORY_SIGNAL",
+    optimal_weight_in_hindsight set to the weight it should have had,
+    learning_signal: "RBI/SEBI circular detected in pre.json but AM predictor did not include 14th factor."
+
+If no signals were present:
+  → Record: "DOMESTIC_REGULATORY_SIGNAL: None today. No scoring needed."
+
+---
 
 For each of the 13 factors in yesterday's PM prediction, evaluate:
 - Was the factor correctly identified as active or inactive?

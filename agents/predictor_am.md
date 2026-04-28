@@ -115,10 +115,46 @@ Read am_data.json and yesterday's pm.json.
 Check: Did anything overnight change the picture from the PM prediction?
 Flag any major divergence from PM prediction and explain why.
 
-### STEP 2 — GIFT NIFTY GAP ANCHOR
-gift_nifty_level is the primary input for gap-open estimate.
-Calculate implied gap: ((gift_nifty_level - previous_nifty_close) / previous_nifty_close) * 100
-This is your gap-open estimate to within 0.3%.
+### STEP 2 — GIFT NIFTY GAP ANCHOR (with freshness validation)
+
+Before calculating the implied gap, validate data freshness:
+
+1. Read am_data.json field: am_mode_only.gift_nifty_staleness_warning
+   - If gift_nifty_staleness_warning is TRUE:
+     → Do NOT use the stale value for the gap calculation.
+     → Run a live search: "Gift Nifty current level right now {DATE}"
+     → Record the fresh figure and note: "Gift Nifty re-fetched at [time] due to staleness flag."
+     → Update gift_nifty_level with the fresh value before calculating.
+   - If gift_nifty_staleness_warning is FALSE or null:
+     → Use gift_nifty_level as-is. Record: "Gift Nifty confirmed fresh — age [N] min."
+
+2. Calculate implied gap: ((gift_nifty_level - previous_nifty_close) / previous_nifty_close) * 100
+   This is your gap-open estimate to within 0.3%.
+
+3. Record in JSON:
+   - gift_nifty_data_age_minutes: value from am_data.json (or updated after re-fetch)
+   - gift_nifty_freshness_status: "FRESH" or "STALE_REFETCHED" or "STALE_USED_AS_IS"
+
+### STEP 3B — DOMESTIC REGULATORY SIGNAL CHECK
+
+Read today's pre.json file: data/{YYYY}/{MM}/{DATE}_pre.json
+
+Check the domestic_regulatory_signals array.
+
+If any signals are present (array is non-empty):
+  → This is the 14th factor: DOMESTIC_REGULATORY_SIGNAL
+  → Assign weight based on affected sector breadth:
+      - Banking sector: weight 6-8 (Bank Nifty is ~35% of Nifty)
+      - NBFC/Fintech: weight 4-6
+      - Mutual funds/capital markets: weight 3-5
+      - Single small sector: weight 2-3
+  → Signal direction: use the sentiment field from the domestic_regulatory_signals entry
+  → Add to factor_ranking alongside the 13 standard factors
+  → Include in dominant_factor if it outweighs other factors
+
+If domestic_regulatory_signals is empty or absent:
+  → Record: "DOMESTIC_REGULATORY_SIGNAL: NONE. No RBI/SEBI circulars today."
+  → Do not add a 14th factor entry.
 
 ### STEP 3 — OVERNIGHT PRE RESOLUTION CHECK
 Did any PRE from yesterday's pre.json resolve overnight?

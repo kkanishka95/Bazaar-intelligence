@@ -29,11 +29,21 @@
 15. "Trump announcement today {DATE}"
 
 ### AM mode additional searches:
-11. "Gift Nifty SGX Nifty current level {DATE}"
+IMPORTANT: Search 11 is mandatory and must run FIRST. Validate freshness before proceeding.
+
+11. "Gift Nifty SGX Nifty current level {DATE} live" — MANDATORY FIRST. Record the timestamp of the
+    quoted figure. If the figure is more than 45 minutes old relative to your collection time, set
+    gift_nifty_staleness_warning: true and re-run this search with query
+    "Gift Nifty live price right now {DATE}" before recording the value.
 12. "US stock market close yesterday {DATE}"
 13. "Nikkei 225 Hang Seng today {DATE}"
 14. "Dollar rupee morning {DATE}"
 15. "India stock market opening cues {DATE}"
+
+### AM mode regulatory scans (run after Search 15 when in AM mode):
+16. "RBI circular notification today {DATE}"
+17. "SEBI circular order today {DATE}"
+18. "India banking regulation announcement {DATE} morning"
 
 ## OUTPUT FORMAT
 
@@ -87,9 +97,14 @@ Write the following JSON to the appropriate file path:
     "gift_nifty_level": "",
     "gift_nifty_change_pts": "",
     "gift_nifty_change_pct": "",
+    "gift_nifty_timestamp": "HH:MM IST — exact time of the quoted figure",
+    "gift_nifty_data_age_minutes": null,
+    "gift_nifty_staleness_warning": false,
     "nikkei_change_pct": "",
     "hang_seng_change_pct": "",
-    "kospi_change_pct": ""
+    "kospi_change_pct": "",
+    "rbi_circular_today": null,
+    "sebi_circular_today": null
   },
   "pm_mode_only": {
     "ftse_change_pct": "",
