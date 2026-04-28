@@ -28,6 +28,88 @@ THROUGH THE DAY, OR WILL IT REVERSE?
 
 ## EXECUTION SEQUENCE
 
+---
+
+### PRE-FIRST SCAN — MANDATORY. RUNS BEFORE ALL OTHER STEPS.
+
+The AM agent has two jobs in this block:
+1. Check if yesterday's PM PRE has resolved overnight
+2. Check if any new PRE emerged overnight while India was closed
+
+#### PART A — YESTERDAY'S PRE RESOLUTION CHECK
+
+Read yesterday's PM prediction file: predictions/{YYYY}/{MM}/{YESTERDAY}_pm.json
+
+Check the pre_status field:
+- If pre_status.active was FALSE → no PRE to resolve. Record "PM PRE: None active."
+  Proceed to Part B.
+- If pre_status.active was TRUE → the PRE is active. Now determine if it resolved.
+
+Run these 2 targeted searches:
+Search 1: "[PRE entity from yesterday's pm.json] announcement statement {DATE}"
+Search 2: "[PRE description keywords from yesterday's pm.json] resolved {DATE}"
+
+Classify the resolution:
+  SCENARIO_A_TRIGGERED: Positive outcome occurred overnight
+    → Record which scenario played out and what the market impact should be
+    → This becomes the dominant input for today's prediction
+    → Confidence floor lifts to 80% (resolution is now known)
+
+  SCENARIO_B_TRIGGERED: Negative outcome occurred overnight
+    → Same as above but for the bearish scenario
+
+  NO_RESOLUTION: No development overnight, PRE still active
+    → The PRE carries forward as an active intraday risk
+    → Confidence stays capped at 55%
+    → Note in prediction: "PRE from yesterday unresolved.
+       Intraday direction could flip on any development."
+
+  PRE_PARTIALLY_RESOLVED: A development occurred but outcome is ambiguous
+    → Treat as NO_RESOLUTION with a directional lean
+    → State the lean explicitly: "Partial resolution leans [direction]
+       but confirmation needed."
+
+#### PART B — OVERNIGHT NEW PRE SCAN
+
+Even if yesterday's PM had no PRE, run these 3 searches for anything
+that emerged overnight:
+
+Search 3: "Trump statement announcement overnight {DATE}"
+Search 4: "breaking news India markets geopolitical {DATE} morning"
+Search 5: "RBI SEBI emergency announcement {DATE} morning"
+
+Apply the same THREE-CONDITION TEST from the PM agent's Part A.
+If a new PRE is detected → classify and map scenarios before proceeding.
+
+#### PART C — PRE HANDOFF STATEMENT
+
+Write one explicit sentence before proceeding to data collection:
+
+If PM PRE resolved as Scenario A:
+  "PM PRE resolved overnight: [entity] [action taken].
+   This triggers Scenario A. Prediction framework: bullish.
+   Confidence floor: 80%. Proceeding with Gift Nifty confirmation."
+
+If PM PRE resolved as Scenario B:
+  "PM PRE resolved overnight: [entity] [action taken].
+   This triggers Scenario B. Prediction framework: bearish.
+   Confidence floor: 80%. Proceeding with Gift Nifty confirmation."
+
+If no resolution:
+  "PM PRE unresolved: [brief description] still pending.
+   Confidence capped at 55%. Gift Nifty direction taken as primary
+   signal but PRE remains active intraday risk."
+
+If PM had no PRE and no new PRE detected:
+  "PRE SCAN: CLEAR. No qualifying overnight event detected.
+   Proceeding with standard Gift Nifty anchored framework.
+   Confidence floor: 70%."
+
+This handoff statement is the first line of internal_reasoning in the AM
+prediction JSON. It is not shown in the WhatsApp message.
+
+---
+
 ### STEP 1 — LOAD DATA AND CROSS-REFERENCE PM PREDICTION
 Read am_data.json and yesterday's pm.json.
 Check: Did anything overnight change the picture from the PM prediction?
@@ -100,6 +182,11 @@ Write WhatsApp message to output/{YYYY}/{MM}/{DATE}_am_whatsapp.txt
     "pm_prediction_alignment": "ALIGNED or DIVERGED",
     "divergence_reason": ""
   },
+  "pm_pre_resolution_status": "SCENARIO_A / SCENARIO_B / NO_RESOLUTION / PARTIAL / NA",
+  "pm_pre_resolution_description": "What happened overnight",
+  "new_overnight_pre": "CONFIRMED or CLEAR",
+  "confidence_floor_applied": 70,
+  "confidence_floor_reason": "PRE resolved — confidence floor 80% / Gift Nifty known — confidence floor 70% / PRE unresolved — cap 55%",
   "gap_open": {
     "gift_nifty_level": 24050,
     "previous_nifty_close": 23898,
@@ -140,7 +227,7 @@ Write WhatsApp message to output/{YYYY}/{MM}/{DATE}_am_whatsapp.txt
     "11:00_to_13:00": "Watch for profit booking near 24060 resistance.",
     "13:00_to_15:30": "DII buying likely to support above 23800. F&O activity increases."
   },
-  "internal_reasoning": "3-4 sentence paragraph for evaluator agent. Not shown in WhatsApp."
+  "internal_reasoning": "First sentence must be the PRE HANDOFF STATEMENT from Part C. Then 3-4 sentences explaining dominant factor, supporting factors, analogue used, and confidence rationale. Not shown in WhatsApp."
 }
 ```
 
@@ -161,6 +248,14 @@ Template:
 📊 Gift Nifty: {gift_nifty_level} (implies {implied_gap_pct} / {implied_gap_pts} pts)
 🎯 Intraday bias: {BIAS} · {TIER}
 
+[INCLUDE ONLY IF PM PRE WAS ACTIVE:]
+🔓 PRE RESOLVED: {Scenario A or B triggered / Still unresolved}
+{one line: what happened overnight that resolved or didn't resolve it}
+
+[INCLUDE ONLY IF PM PRE IS STILL UNRESOLVED:]
+⚡ PRE STILL ACTIVE: {one line description}
+   Intraday flip risk: {direction} {%} if {specific trigger}
+
 🔑 WHY:
 {dominant_factor_1_line}
 {supporting_factor_1_line if weight above 6}
@@ -174,9 +269,6 @@ Template:
 
 ⏱ WATCH 9:15-9:30:
 {first_15_min_watch}
-
-{INCLUDE IF PRE STILL ACTIVE:}
-⚡ PRE STILL ACTIVE: {one_line_description}
 
 #BazaarIntel
 ```

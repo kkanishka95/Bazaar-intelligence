@@ -43,10 +43,42 @@ Compare predicted gap direction vs actual market open vs previous close:
 - 1 point: Actual open within 0.5% of predicted range boundary
 - 0 points: Actual open outside range by more than 0.5%
 
-### 2C — PRE Detection Score (0-2 points, only if PRE was active)
-- 2 points: PRE correctly detected AND outcome scenario correctly identified
-- 1 point: PRE detected but wrong scenario probability weighting
-- 0 points: PRE not detected when it should have been, OR PRE flagged when none existed
+### 2C — PRE Detection Score (0-3 points, always evaluated)
+
+This section is scored on EVERY prediction, not just when a PRE was active.
+The evaluator must check whether a PRE existed and whether the agent caught it.
+
+Check the PM prediction's pre_first_scan_result field.
+Then check actual market events for that day: was there a PRE that night?
+
+Scoring:
+
+3 points — PRE correctly detected AND committed scenario was correct
+  (agent said PRE confirmed, picked the right scenario, prediction matched)
+
+2 points — PRE correctly detected AND committed scenario was wrong
+  BUT confidence was capped at 55% as required
+  (agent caught the event, made a reasonable call, flagged uncertainty)
+
+2 points — No PRE existed AND agent correctly declared CLEAR
+  (confirming absence is as important as detecting presence)
+
+1 point — PRE existed AND agent detected it BUT did not commit to a scenario
+  (partial credit: saw it, didn't resolve it — the old behaviour)
+
+1 point — PRE existed AND agent missed it BUT the event was in a secondary
+  news source that required deep searching
+  (partial credit: genuinely hard to find)
+
+0 points — PRE existed AND agent declared CLEAR
+  (complete miss — the failure mode this patch fixes)
+
+0 points — No PRE existed BUT agent incorrectly declared a PRE
+  (false alarm on PRE detection — penalised equally)
+
+Add this to the root_cause_analysis section as a mandatory field:
+"pre_detection_result": "HIT / MISS / FALSE_ALARM / CORRECT_CLEAR",
+"pre_detection_notes": "specific explanation of what was or wasn't caught and why"
 
 ### 2D — Dominant Factor Accuracy Score (0-3 points)
 Was the dominant factor actually the thing that moved the market?

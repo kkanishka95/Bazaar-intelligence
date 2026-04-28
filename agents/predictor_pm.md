@@ -13,6 +13,105 @@
 
 ## EXECUTION SEQUENCE
 
+---
+
+### PRE-FIRST SCAN — MANDATORY. RUNS BEFORE ALL OTHER STEPS.
+
+This block runs before data collection, before factor ranking, before everything.
+It cannot be skipped. If you skip this block, the prediction is invalid.
+
+#### PART A — NAMED AUTHORITY SCAN
+
+Run these 5 searches in order. Do not proceed to Part B until all 5 are done.
+Replace {DATE} and {DATE+1} with today's date and tomorrow's date.
+
+Search 1: "Trump Truth Social Iran statement tonight {DATE}"
+Search 2: "Fed Reserve RBI OPEC emergency meeting announcement {DATE}"
+Search 3: "Iran US ceasefire proposal response deadline {DATE} {DATE+1}"
+Search 4: "India government RBI SEBI announcement after market hours {DATE}"
+Search 5: "geopolitical deadline decision expected overnight {DATE}"
+
+For each search result, apply the PRE THREE-CONDITION TEST:
+  Condition 1: Is there a NAMED AUTHORITY with market-moving power?
+               (US President, Fed Chair, RBI Governor, India PM/FM,
+               Iranian Supreme Leader, OPEC Sec-Gen, Supreme Court)
+  Condition 2: Is there a SPECIFIC TIMEFRAME that falls within the
+               India overnight window? (after 3:30 PM IST today through
+               9:15 AM IST tomorrow)
+  Condition 3: Does the event have at least TWO possible outcomes that
+               produce OPPOSITE market directions for India?
+
+If ALL THREE conditions are met → PRE IS CONFIRMED. Go to Part B.
+If TWO conditions are met → PRE IS PROBABLE. Go to Part B with MEDIUM confidence.
+If ONE or ZERO conditions met → No PRE. Record "PRE SCAN: CLEAR — no qualifying
+  event detected. Searched: [list the 5 queries]." Then proceed to Step 1.
+
+IMPORTANT: You must explicitly state the result of this scan every time.
+"PRE SCAN: CLEAR" is as important as "PRE SCAN: CONFIRMED."
+Never silently skip this block.
+
+#### PART B — ACTIVE REGIME OVERNIGHT CHECK
+
+This runs whenever MACRO_REGIME factor weight is above 5 (i.e., whenever
+an active geopolitical or macro regime is in force — Iran war, trade war,
+Fed tightening cycle, NBFC crisis, etc.)
+
+Run these 2 searches:
+Search 6: "[active regime key actors] meeting talks scheduled {DATE} {DATE+1}"
+Search 7: "[active regime key actors] response statement expected {DATE} {DATE+1}"
+
+Ask explicitly: "Is there any scheduled communication, deadline, meeting,
+or expected response between the key parties in the active regime that
+falls within the India overnight window?"
+
+If YES → treat as a PRE (or upgrade an existing PROBABLE PRE to CONFIRMED).
+If NO → record "REGIME OVERNIGHT CHECK: No scheduled resolution event
+  in active [regime name] regime for tonight. Standard regime weighting applies."
+
+#### PART C — PRE CLASSIFICATION AND SCENARIO MAPPING
+
+If a PRE was confirmed in Part A or B:
+
+Step C1: Name the PRE
+  Entity: [named authority]
+  Description: [what decision/announcement is pending]
+  Deadline window: [specific timeframe]
+  Resolution before India open: YES / POSSIBLY / UNLIKELY
+
+Step C2: Map both scenarios
+  Scenario A (positive outcome):
+    - Outcome description
+    - Estimated India market impact: [direction] [% range]
+    - Historical analogue: [Analogue ID, date, actual move]
+
+  Scenario B (negative outcome):
+    - Outcome description
+    - Estimated India market impact: [direction] [% range]
+    - Historical analogue: [Analogue ID, date, actual move]
+
+Step C3: Score the evidence
+  List every available signal pointing toward Scenario A.
+  List every available signal pointing toward Scenario B.
+  Count them. The majority scenario is your committed call.
+  If tied, the base case (no resolution) is your committed call.
+
+Step C4: Set the confidence cap
+  RULE: If PRE is confirmed AND resolution window overlaps with
+  India overnight → confidence score is automatically capped at 55%.
+  This cap overrides all other confidence calculations.
+  It signals: "The factors point this way but a live binary event
+  could override everything before India opens."
+
+Step C5: Commit to a scenario
+  Write one sentence: "PRE resolved internally. Committing to
+  [Scenario A / Scenario B / No resolution (base case)] based on
+  [N] signals in favour vs [N] against."
+  This sentence appears in the JSON internal_reasoning field only.
+  It does NOT appear in the WhatsApp message.
+  From this point forward, the prediction is built on the committed scenario.
+
+---
+
 ### STEP 1 — LOAD AND VALIDATE DATA
 Read the pm_data.json file. Confirm all critical fields are populated:
 - nifty_level, sensex_level, india_vix, brent_crude_usd, usd_inr
@@ -94,7 +193,31 @@ Predictability tier:
 - P3: Macro trend visible, direction probable, specific timing uncertain
 - P4: No strong advance signal, black swan risk
 
-### STEP 7 — GENERATE OUTPUTS
+### STEP 7 — FINAL VALIDATION
+
+Before writing outputs, verify:
+1. Is the dominant factor the one with the highest adjusted_weight?
+2. Does the prediction call match the dominant factor signal?
+3. Is the WhatsApp message under 900 characters?
+4. Does the circuit breaker include the magnitude of what changes?
+   The circuit breaker must follow this exact format:
+
+   If NO PRE was detected:
+     ⚠️ ONLY CHANGES IF: [single specific event]
+        → [direction] [magnitude range] · Analogue [ID + date]
+
+   If PRE was detected and resolved internally:
+     ⚠️ ONLY CHANGES IF: [the non-committed scenario triggers]
+        → [direction] [magnitude range] · Analogue [ID + date]
+     This line must name the specific event that would flip the call,
+     not a category of events. "Geopolitical escalation" is not acceptable.
+     "Trump rejects Iran proposal and announces new bombing deadline" is.
+
+   The magnitude range in the circuit breaker must be derived from
+   the closest historical analogue in analogues.json.
+   Never write "large move" or "significant impact" — write the number.
+
+### STEP 8 — GENERATE OUTPUTS
 Write prediction JSON to predictions/{YYYY}/{MM}/{DATE}_pm.json
 Write WhatsApp message to output/{YYYY}/{MM}/{DATE}_pm_whatsapp.txt
 
@@ -111,6 +234,19 @@ Write WhatsApp message to output/{YYYY}/{MM}/{DATE}_pm_whatsapp.txt
     "data_file_read": "data/...",
     "pre_file_read": "data/..."
   },
+  "pre_first_scan_result": "CONFIRMED or PROBABLE or CLEAR",
+  "pre_first_scan_searches": [
+    "exact query 1",
+    "exact query 2",
+    "exact query 3",
+    "exact query 4",
+    "exact query 5"
+  ],
+  "regime_overnight_check": "No scheduled resolution event in active [regime] / [description of event found]",
+  "pre_committed_scenario": "Scenario A / Scenario B / Base case / N/A",
+  "pre_evidence_score": "3 bearish vs 1 bullish → committed bearish / N/A",
+  "confidence_cap_applied": false,
+  "confidence_cap_reason": "",
   "prediction": {
     "call": "GAP_DOWN_WEAK",
     "direction": "down",
@@ -186,7 +322,7 @@ Write WhatsApp message to output/{YYYY}/{MM}/{DATE}_pm_whatsapp.txt
       "priority": "HIGHEST"
     }
   ],
-  "internal_reasoning": "3-4 sentence paragraph explaining the dominant factor, supporting factors, PRE status, analogue used, and confidence rationale. This is for the evaluator agent — not shown in WhatsApp."
+  "internal_reasoning": "3-4 sentence paragraph explaining the dominant factor, supporting factors, PRE status, analogue used, and confidence rationale. First sentence must be the PRE committed scenario statement if a PRE was detected. This is for the evaluator agent — not shown in WhatsApp."
 }
 ```
 
@@ -210,7 +346,16 @@ Template:
 {dominant_factor_name}: {1-2 line plain English reason}
 {supporting_factor if weight above 6}: {1 line}
 
-{INCLUDE ONLY IF PRE ACTIVE:}
+[IF NO PRE WAS DETECTED:]
+⚠️ ONLY CHANGES IF: {single specific event} → {direction} {% range} · Analogue {ID}
+
+[IF PRE WAS DETECTED — replace the ONLY CHANGES IF line with:]
+⚡ PRE RESOLVED: Committing to {scenario label}
+{Main call stands as written above}
+⚠️ FLIPS IF: {non-committed scenario specific event}
+   → {opposite direction} {% range} · Analogue {ID}
+
+{INCLUDE ONLY IF PRE ACTIVE — keep the PENDING EVENT block:}
 ⚡ PENDING EVENT:
 {authority} — {deadline}
 • {scenario_a_pct}% chance: {outcome_a} → {impact_a}
